@@ -1,0 +1,124 @@
+/*
+  Just some local overrides so the original stylesheet (main.css) can remain unedited.
+  Written by Michael Edelstone. Use for any purpose without crediting me.
+*/
+
+.color-tool {
+  max-width: none;
+  padding: 140px 40px 60px;
+}
+
+.tool-title {
+  display: none;
+}
+
+.page-title {
+  font-family: 'Roboto';
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  top: 100px;
+  padding: 0 40px;
+  height: 0;
+}
+
+.color-palette__color-weight-label {
+  max-width: 64px;
+}
+
+.utility-panel {
+  right: 20px;
+  top: 20px;
+}
+
+.utility-panel .content__info {
+  display: none;
+}
+
+.utility-panel {
+  height: 120px;
+}
+
+.utility-panel__label {
+  cursor: default;
+}
+
+.utility-panel__label i {
+  display: none;
+}
+
+.color-palette__color-weight-label {
+  font-family: Courier, monospace;
+}
+
+.clipboard-confirmation {
+  right: 20px;
+  left: auto;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+		background-color: #fff;
+	}
+
+	.color-tool {
+		display: block;
+    padding: 210px 20px 60px;
+	}
+
+  .page-title {
+    font-size: 24px;
+    padding: 0 20px;
+    top: 165px;
+  }
+
+	.mobile-message {
+		display: none
+	}
+
+  .utility-panel {
+    left: 20px;
+    position: absolute;
+  }
+
+  .color-picker-panel {
+    left: 40px;
+    top: 40px;
+    position: absolute;
+  }
+
+  .color-palette__cell--selected, .color-palette__cell--selected .color-palette__ripple {
+    border-radius: 0;
+  }
+
+  .github-corner svg {
+    transform: scale(1, 1) !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .color-tool {
+    padding-left: 10px;
+    padding-right: 10px;
+	}
+
+  .utility-panel {
+    left: 10px;
+  }
+
+  .color-picker-panel {
+    left: 30px;
+    top: 30px;
+  }
+
+  .page-title {
+    padding: 0 10px;
+    font-size: 20px;
+  }
+
+  .clipboard-confirmation {
+    right: 10px;
+  }
+}
