@@ -4,14 +4,16 @@
 
 ## What is this?
 
-This is a Material Design palette generator. It does a couple things:
+This is a clone of the official Material Design palette generator. It does a couple things:
 
 1. Builds you a full color palette from a given hex color, based on Material Design standards
 2. Provides you with complementary colors based off your primary color
 
-## Why this?
+## Why is this?
 
-The official Google color palette tool [is embedded and buried deep within their docs](https://material.io/design/color/the-color-system.html#tools-for-picking-colors) and they hid it from search engines, making it very hard to discover and use. So I forked it and published my own with some minor improvements. I did not change the way colors are derived.
+The official Google color palette tool [is embedded and buried deep within their docs](https://material.io/design/color/the-color-system.html#tools-for-picking-colors) and they hid it from search engines, making it very hard to discover and use.
+
+So I forked it and published my own with some minor improvements. I did not change the way colors are derived.
 
 If you're wondering, the color output matches that produced in the [Material Theme Editor for Sketch](https://material.io/tools/theme-editor/), so it's a good companion for that.
 
