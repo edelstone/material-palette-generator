@@ -86,6 +86,11 @@
 .clipboard-confirmation {
   right: 20px;
   left: auto;
+  animation: none;
+}
+
+.clipboard-confirmation--visible {
+  animation: fadein 200ms linear;
 }
 
 @media screen and (max-width: 800px) {
