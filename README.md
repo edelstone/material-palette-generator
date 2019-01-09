@@ -1,6 +1,6 @@
 # [<img src="favicon.ico" width="25px" />](https://edelstone.github.io/material-palette-generator) &nbsp;[Material Design Palette Generator](https://edelstone.github.io/material-palette-generator)
 
-<img src="/images/screenshot.png" />
+<img src="/images/screenshot-home.png" />
 
 ## What is this?
 
