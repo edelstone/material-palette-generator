@@ -12,14 +12,42 @@
   display: none;
 }
 
-.page-title {
-  font-family: 'Roboto';
-  font-size: 28px;
-  font-weight: bold;
+.page-content {
   position: relative;
   top: 100px;
   padding: 0 40px;
+}
+
+.page-title {
+  font-family: 'Roboto';
+  font-size: 28px;
   height: 0;
+  margin: 0;
+}
+
+.page-messaging {
+  margin-top: 100px;
+  font-family: 'Roboto';
+  font-weight: normal;
+  padding-bottom: 60px;
+}
+
+.page-messaging-title {
+  font-size: 64px;
+}
+
+.page-messaging-subtitle {
+  font-weight: normal;
+}
+
+.page-messaging a {
+  color: #93197a;
+}
+
+.page-messaging a:active,
+.page-messaging a:focus,
+.page-messaging a:hover {
+  text-decoration: none;
 }
 
 .color-palette__color-weight-label {
@@ -66,10 +94,13 @@
     padding: 210px 20px 60px;
 	}
 
-  .page-title {
-    font-size: 24px;
+  .page-content {
     padding: 0 20px;
     top: 165px;
+  }
+
+  .page-title {
+    font-size: 24px;
   }
 
 	.mobile-message {
@@ -113,8 +144,11 @@
     top: 30px;
   }
 
-  .page-title {
+  .page-content {
     padding: 0 10px;
+  }
+
+  .page-title {
     font-size: 20px;
   }
 
