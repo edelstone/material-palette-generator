@@ -33,7 +33,11 @@
 }
 
 .page-messaging-title {
-  font-size: 64px;
+  font-size: 80px;
+  animation: rotate 30s linear infinite;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 .page-messaging-subtitle {
@@ -155,4 +159,8 @@
   .clipboard-confirmation {
     right: 10px;
   }
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
 }
