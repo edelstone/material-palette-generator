@@ -1,4 +1,4 @@
-# [<img src="favicon.ico" width="25px" />](https://edelstone.github.io/material-palette-generator) &nbsp;[Material Design Palette Generator](https://edelstone.github.io/material-palette-generator)
+# [<img src="favicon.ico" width="25px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
 
 <img src="/images/screenshot-home.png" />
 
