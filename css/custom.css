@@ -1,6 +1,5 @@
 /*
-  Just some local overrides so the original stylesheet (main.css) can remain unedited.
-  Written by Michael Edelstone. Use for any purpose without crediting me.
+Just some local overrides so Google's original stylesheet (main.css) can remain unedited.
 */
 
 .color-tool {
@@ -23,6 +22,7 @@
   font-size: 28px;
   height: 0;
   margin: 0;
+  line-height: 1.2;
 }
 
 .page-messaging {
@@ -185,10 +185,6 @@
 
   .page-content {
     padding: 0 10px;
-  }
-
-  .page-title {
-    font-size: 20px;
   }
 
   .clipboard-confirmation {
