@@ -11,7 +11,7 @@ This is a (modified) clone of the official Material Design palette generator. It
 
 ## Why is this?
 
-The official Google palette generator [is embedded and buried deep within their Material docs](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). Since it's an inline tool, they also hid it from search engines, making it difficult to discover or bookmark.
+Google's official palette generator [is embedded and buried deep within the Material docs](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). Since it's an inline tool, they also hid it from search engines, making it difficult to discover or bookmark.
 
 To make it a little easier to use and to preserve it for our own documentation, we forked it and added some minor improvements. We did not change the way colors are derived.
 
