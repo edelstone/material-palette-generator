@@ -1,3 +1,8 @@
+// Only thing edited from the original script is the default primary color
+// when the page loads. We added a note inline where that happens; search
+// for "Change default primary color".
+// - Kuali Co.
+
 //third_party/javascript/redux/redux.min.js
 /**
  * Redux v3.5.2
