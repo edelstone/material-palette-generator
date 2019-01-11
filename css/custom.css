@@ -2,9 +2,18 @@
 Just some local overrides so Google's original stylesheet (main.css) can remain unedited.
 */
 
+body {
+  font-family: Roboto;
+  color: #424242;
+}
+
+.palettes {
+  min-height: calc(100vh - 90px);
+}
+
 .color-tool {
   max-width: none;
-  padding: 140px 40px 60px;
+  padding: 140px 40px 80px;
 }
 
 .tool-title {
@@ -18,7 +27,6 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
 }
 
 .page-title {
-  font-family: 'Roboto';
   font-size: 28px;
   height: 0;
   margin: 0;
@@ -27,7 +35,6 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
 
 .page-messaging {
   margin-top: 100px;
-  font-family: 'Roboto';
   font-weight: normal;
   padding-bottom: 60px;
 }
@@ -85,16 +92,47 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
 
 .clipboard-confirmation {
   right: 20px;
+  transform: translateY(200px);
   left: auto;
   animation: none;
 }
 
 .clipboard-confirmation--visible {
-  animation: fadein 200ms linear;
+  animation: fadein 250ms linear;
+  transform: translateY(-20px);
 }
 
 .github-corner:hover .octo-arm {
 	animation: octocat-wave 560ms ease-in-out
+}
+
+.page-footer {
+  padding: 0 40px;
+  margin-bottom: 30px;
+}
+
+.footer-text {
+  display: inline;
+  font-weight: 500;
+}
+
+.footer-logo {
+  max-width: 80px;
+  vertical-align: middle;
+  position: relative;
+  margin-left: 5px;
+  bottom: 5px;
+}
+
+.footer-link {
+  transition: all .15s ease;
+  display: inline-block;
+}
+
+.footer-link:active,
+.footer-link:focus,
+.footer-link:hover {
+  transform: scale(1.1);
 }
 
 @keyframes octocat-wave {
@@ -109,16 +147,6 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
 	}
 }
 
-@media (max-width:500px) {
-	.github-corner:hover .octo-arm {
-		animation: none
-	}
-	.github-corner .octo-arm {
-		animation: octocat-wave 560ms ease-in-out
-	}
-}
-
-
 @keyframes rotate {
   100% { transform: rotate(360deg); }
 }
@@ -130,7 +158,7 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
 
 	.color-tool {
 		display: block;
-    padding: 210px 20px 60px;
+    padding: 200px 20px 60px;
 	}
 
   .page-content {
@@ -166,6 +194,10 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
     right: 0 !important;
     left: auto !important;
   }
+
+  .page-footer {
+    padding: 0 20px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -187,7 +219,20 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
     padding: 0 10px;
   }
 
+  .page-footer {
+    padding: 0 10px;
+    text-align: center;
+  }
+
   .clipboard-confirmation {
     right: 10px;
   }
+
+  .github-corner:hover .octo-arm {
+		animation: none
+	}
+
+	.github-corner .octo-arm {
+		animation: octocat-wave 560ms ease-in-out
+	}
 }
