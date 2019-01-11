@@ -25,7 +25,7 @@ The color output matches that produced in the [Material Theme Editor for Sketch]
 
 ## Tech
 
-It's just HTML, CSS, and JavaScript. Run it locally with your favorite local server.
+It's just HTML, CSS, and JavaScript. Run it locally on your favorite server.
 
 ## About us
 
