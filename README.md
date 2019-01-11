@@ -23,6 +23,10 @@ The color output matches that produced in the [Material Theme Editor for Sketch]
 - You can use any of our modifications without credit, except...
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.
 
+## Tech
+
+It's just HTML, CSS, and JS. Run it locally with your favorite local server.
+
 ## About us
 
 [Kuali](https://kuali.co) is a software company that serves the higher education space. [Join our team](https://jobs.kuali.co).
