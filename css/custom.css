@@ -8,7 +8,8 @@ body {
 }
 
 .palettes {
-  min-height: calc(100vh - 90px);
+  /* footer is ~59px high */
+  min-height: calc(100vh - 59px);
 }
 
 .color-tool {
