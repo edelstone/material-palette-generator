@@ -50,6 +50,10 @@ body {
   line-height: 1.2;
 }
 
+.page-title a {
+	color: #424242;
+}
+
 .page-messaging {
   margin-top: 100px;
   font-weight: normal;
@@ -72,12 +76,6 @@ body {
 .standard-link {
   color: #22835d;
 	font-weight: 500;
-}
-
-.standard-link:active,
-.standard-link:focus,
-.standard-link:hover {
-  text-decoration: none;
 }
 
 .color-palette__color-weight-label {
