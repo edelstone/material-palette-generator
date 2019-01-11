@@ -24,8 +24,8 @@ body {
 }
 
 .palettes {
-  /* footer is ~59px high */
-  min-height: calc(100vh - 59px);
+  /* footer is ~96px high */
+  min-height: calc(100vh - 96px);
 }
 
 .color-tool {
@@ -69,13 +69,14 @@ body {
   font-size: 20px;
 }
 
-.page-messaging a {
-  color: #93197a;
+.standard-link {
+  color: #22835d;
+	font-weight: 500;
 }
 
-.page-messaging a:active,
-.page-messaging a:focus,
-.page-messaging a:hover {
+.standard-link:active,
+.standard-link:focus,
+.standard-link:hover {
   text-decoration: none;
 }
 
@@ -127,11 +128,11 @@ body {
 .page-footer {
   padding: 0 40px;
   margin-bottom: 30px;
+	font-weight: 500;
 }
 
-.footer-text {
-  display: inline;
-  font-weight: 500;
+.page-footer p {
+	margin-top: 0;
 }
 
 .footer-logo {
