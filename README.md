@@ -29,4 +29,4 @@ It's just HTML, CSS, and JavaScript. Run it locally on your favorite server.
 
 ## About us
 
-[Kuali](https://kuali.co) is a software company that serves the higher education space. [Join our team](https://jobs.kuali.co).
+[Kuali](https://kuali.co) is a software company that serves the higher education space. We're based in Utah and have remote workers all over the United States. [Join our team](https://jobs.kuali.co).
