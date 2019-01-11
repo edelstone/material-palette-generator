@@ -2,6 +2,22 @@
 Just some local overrides so Google's original stylesheet (main.css) can remain unedited.
 */
 
+@keyframes octocat-wave {
+	0%, 100% {
+		transform: rotate(0)
+	}
+	20%, 60% {
+		transform: rotate(-25deg)
+	}
+	40%, 80% {
+		transform: rotate(10deg)
+	}
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
 body {
   font-family: Roboto;
   color: #424242;
@@ -41,15 +57,16 @@ body {
 }
 
 .page-messaging-title {
-  font-size: 80px;
+  font-size: 90px;
   animation: rotate 30s linear infinite;
   display: inline-block;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .page-messaging-subtitle {
   font-weight: normal;
+  font-size: 20px;
 }
 
 .page-messaging a {
@@ -134,22 +151,6 @@ body {
 .footer-link:focus,
 .footer-link:hover {
   transform: scale(1.1);
-}
-
-@keyframes octocat-wave {
-	0%, 100% {
-		transform: rotate(0)
-	}
-	20%, 60% {
-		transform: rotate(-25deg)
-	}
-	40%, 80% {
-		transform: rotate(10deg)
-	}
-}
-
-@keyframes rotate {
-  100% { transform: rotate(360deg); }
 }
 
 @media screen and (max-width: 800px) {

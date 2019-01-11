@@ -25,4 +25,4 @@ The color output matches that produced in the [Material Theme Editor for Sketch]
 
 ## About us
 
-[Kuali](https://kuali.co) is a software company that serves the higher education space. [We're hiring](https://jobs.kuali.co)!
+[Kuali](https://kuali.co) is a software company that serves the higher education space. [Join our team](https://jobs.kuali.co).
