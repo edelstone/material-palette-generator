@@ -24,8 +24,8 @@ body {
 }
 
 .palettes {
-  /* footer is ~96px high */
-  min-height: calc(100vh - 96px);
+  /* footer is ~116px high */
+  min-height: calc(100vh - 116px);
 }
 
 .color-tool {
@@ -132,7 +132,7 @@ body {
 
 .page-footer {
   padding: 0 40px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 	font-weight: 500;
 }
 
