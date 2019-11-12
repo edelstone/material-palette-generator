@@ -84,8 +84,12 @@
   background: #fafafa;
 }
 
+.carbon-text {
+  font-weight: 400;
+}
+
 .carbon-poweredby {
-  background: #212121;
+  background: #767676;
   font-weight: 500;
   padding: 6px 8px;
 }
@@ -120,7 +124,6 @@
   .carbon-text {
     text-align: left;
     font-size: 14px;
-    font-weight: 400;
   }
 }
 
