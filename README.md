@@ -6,8 +6,10 @@
 
 This is a (slightly modified) clone of the [official Material Design palette generator](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). It does a couple things:
 
-1. Builds you a full color palette from a given hex color, based on Material Design standards, using Google's algorithm for color derivation
+1. Builds you a full color palette from a given hex color
 2. Provides you with complementary colors based off your primary color
+
+Both are based on Material Design standards, and use Google's algorithm for color derivation.
 
 ## Why is this?
 
