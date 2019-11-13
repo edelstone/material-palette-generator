@@ -94,6 +94,7 @@ body {
   top: 20px;
 	height: 120px;
 	position: absolute;
+	width: 240px;
 }
 
 .utility-panel .content__info {
@@ -198,6 +199,7 @@ body {
 
   .utility-panel {
     left: 10px;
+		width: 220px;
   }
 
   .color-picker-panel {
@@ -211,7 +213,6 @@ body {
 
   .page-footer {
     padding: 0 10px;
-    text-align: center;
   }
 
   .clipboard-confirmation {
