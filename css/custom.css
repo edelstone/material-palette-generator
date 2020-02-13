@@ -116,6 +116,10 @@ body {
   font-family: Courier, monospace;
 }
 
+.color-palette__cell-hex-value {
+	text-transform: lowercase;
+}
+
 .clipboard-confirmation {
   right: 20px;
   transform: translateY(200px);
