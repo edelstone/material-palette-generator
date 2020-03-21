@@ -146,7 +146,7 @@ body {
 }
 
 .page-footer a:first-child {
-	margin-right: 30px;
+	margin-right: 25px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -199,7 +199,7 @@ body {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .color-tool {
     padding-left: 10px;
     padding-right: 10px;
@@ -221,6 +221,7 @@ body {
 
   .page-footer {
     padding: 0 10px;
+		text-align: center;
   }
 
   .clipboard-confirmation {
