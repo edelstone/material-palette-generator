@@ -145,6 +145,11 @@ body {
 	margin-top: 0;
 }
 
+.page-footer a {
+	margin-right: 30px;
+	text-decoration: none;
+}
+
 @media screen and (max-width: 1000px) {
   body {
 		background-color: #fff;

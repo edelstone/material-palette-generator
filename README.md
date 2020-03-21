@@ -22,7 +22,7 @@ The color output matches that produced in the [Material Theme Editor for Sketch]
 ## Credits
 
 - Most of this is copyright Google Inc. If you do anything with their code, please maintain the licenses they indicate at the top of the large files.
-- You can use any of our modifications without credit, except...
+- You can use any of my modifications without credit, except...
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.
 
 ## Tech
