@@ -145,7 +145,7 @@ body {
 	margin-top: 0;
 }
 
-.page-footer a {
+.page-footer a:first-child {
 	margin-right: 30px;
 }
 
