@@ -68,7 +68,7 @@
 
 /* Custom overrides */
 
-.ads {
+.mp-ad {
 	position: absolute;
 	right: 20px;
 	top: 60px;
@@ -96,10 +96,11 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .ads {
+  .mp-ad {
     left: 0;
     top: 0;
     max-width: 360px;
+    min-height: 120px;
     position: relative;
     margin-top: 15px;
   }
