@@ -145,6 +145,9 @@ code {
   transform: translateY(200px);
   left: auto;
   animation: none;
+	height: auto;
+	width: auto;
+	padding: 5px 25px;
 }
 
 .clipboard-confirmation--visible {
