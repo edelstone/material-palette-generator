@@ -262,10 +262,6 @@ code {
     padding: 0 10px 60px;
   }
 
-  .clipboard-confirmation {
-    right: 10px;
-  }
-
   .github-corner:hover .octo-arm {
 		animation: none
 	}
