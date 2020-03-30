@@ -74,6 +74,10 @@
 	max-width: 240px;
 }
 
+.sub-page .mp-ad {
+  top: 0;
+}
+
 #carbonads {
   font-family:'Roboto', sans-serif;
   width: 100%;

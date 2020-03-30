@@ -23,6 +23,14 @@ body {
 	color: #424242;
 }
 
+code {
+  font-family: Consolas, monospace;
+	font-size: 85%;
+	background: #f0f0f0;
+  padding: 2px 4px;
+	border-radius: 3px;
+}
+
 .palettes {
   /* footer is ~71px high */
   min-height: calc(100vh - 71px);
@@ -56,17 +64,26 @@ body {
 }
 
 .page-messaging {
-  margin-top: 100px;
+  margin-top: 80px;
   font-weight: normal;
   padding-bottom: 60px;
+	max-width: 680px;
+	line-height: 1.4;
+}
+
+.page-messaging h2 {
+	font-weight: 500;
+	margin: 15px 0;
+	font-size: 24px;
+	padding-top: 20px;
 }
 
 .page-messaging-title {
   font-size: 120px;
+	font-weight: bold;
   animation: rotate 60s linear infinite;
   display: inline-block;
-  margin-top: 0;
-  margin-bottom: 40px;
+  margin: 10px 0 40px;
 }
 
 .page-messaging-subtitle {
@@ -74,14 +91,17 @@ body {
   font-size: 20px;
 }
 
-.standard-link {
+.standard-link, .page-messaging a {
   color: #007c6e;
 	font-weight: 500;
 }
 
 .standard-link:active,
 .standard-link:focus,
-.standard-link:hover {
+.standard-link:hover,
+.page-messaging a:active,
+.page-messaging a:focus,
+.page-messaging a:hover {
   text-decoration: none;
 }
 
@@ -141,6 +161,10 @@ body {
   margin-bottom: 50px;
 }
 
+.page-footer.footer-alt {
+	padding-left: 0;
+}
+
 .page-footer p {
 	margin-top: 0;
 }
@@ -164,10 +188,18 @@ body {
     top: 165px;
   }
 
+	.page-content.sub-page {
+		top: 80px;
+	}
+
   .page-title {
-    font-size: 24px;
+    font-size: 28px;
 		height: auto;
   }
+
+	.page-messaging {
+		margin-top: 40px;
+	}
 
 	.mobile-message {
 		display: none
@@ -221,7 +253,6 @@ body {
 
   .page-footer {
     padding: 0 10px;
-		text-align: center;
   }
 
   .clipboard-confirmation {
