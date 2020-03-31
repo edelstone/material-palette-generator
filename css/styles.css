@@ -223,10 +223,6 @@ code {
     position: absolute;
   }
 
-  .color-palette__cell--selected, .color-palette__cell--selected .color-palette__ripple {
-    border-radius: 0;
-  }
-
   .github-corner svg {
     transform: scale(1, 1) !important;
     right: 0 !important;
