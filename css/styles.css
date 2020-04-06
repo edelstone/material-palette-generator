@@ -143,6 +143,7 @@ code {
 
 .color-palette__cell-hex-value {
 	text-transform: lowercase;
+	left: auto;
 }
 
 .clipboard-confirmation {
