@@ -19,7 +19,7 @@ CSS related to advertisement space on the site
 	flex-direction: column;
   border-radius: 4px;
 	overflow: hidden;
-	box-shadow: inset 0 0 1px 1px rgba(0,6,70,0.2);
+	box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.2);
   text-align: center;
 	text-decoration: none;
 	color: inherit;
@@ -29,11 +29,11 @@ CSS related to advertisement space on the site
 
 .mp-ad-link:focus,
 .mp-ad-link:hover  {
-	box-shadow: inset 0 0 1px 1px rgba(0,6,70,0.2), 0 0 10px 1px rgba(0,6,70,0.2);
+	box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.2), 0 0 10px 1px rgba(0,0,0,0.2);
 }
 
 .mp-ad-link:active {
-	box-shadow: inset 0 0 1px 1px rgba(0,6,70,0.2);
+	box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.2);
 }
 
 .mp-ad-image {
