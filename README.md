@@ -39,6 +39,7 @@ If you're a developer and want to help with the project, please comment on [open
 ## Credits
 
 - Hi, I'm [Michael Edelstone](https://michaeledelstone.com). You might also be interested in the [Tint & Shade Generator](https://maketintsandshades.com), another useful color tool I made.
+- Thank you to our sponsor, [Saas Design](https://www.saasdesign.io/), creators of the beautiful [Figma Material Design UI Kit](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material).
 - Most of this is copyright Google Inc. If you do anything with their code, please maintain the licenses they indicate at the top of the large files.
 - You can use any of my modifications without credit, except...
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.
