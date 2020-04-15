@@ -1,0 +1,94 @@
+/*
+CSS related to advertisement space on the site
+*/
+
+.mp-ad {
+	position: absolute;
+  right: 20px;
+  top: 60px;
+  max-width: 240px;
+}
+
+.sub-page .mp-ad {
+  top: 0;
+}
+
+.mp-ad-link {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+  border-radius: 4px;
+	overflow: hidden;
+	box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.2);
+  text-align: center;
+	text-decoration: none;
+	color: inherit;
+	background: #fafafa;
+	transition: box-shadow .15s ease;
+}
+
+.mp-ad-link:focus,
+.mp-ad-link:hover  {
+	box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.2), 0 0 10px 1px rgba(0,0,0,0.2);
+}
+
+.mp-ad-link:active {
+	box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.mp-ad-image {
+	max-width: 100%;
+}
+
+.mp-ad-text {
+	padding: 10px 15px;
+}
+
+.mp-ad-text p {
+	font-size: 16px;
+  line-height: 1.35;
+	margin: 8px 0;
+}
+
+@media screen and (max-width: 1000px) {
+	.mp-ad {
+		left: 0;
+    top: 0;
+    max-width: 380px;
+    position: relative;
+    margin-top: 15px;
+	}
+
+	.mp-ad-link {
+		text-align: left;
+		flex-direction: row;
+	}
+
+	.mp-ad-image {
+		max-height: 120px;
+		border: none;
+	}
+
+	.mp-ad-text {
+		padding: 5px 10px;
+	}
+
+	.mp-ad-text p {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.mp-ad-image {
+		max-height: 100px;
+	}
+
+	.mp-ad-text {
+    padding: 0px 8px;
+	}
+
+	.mp-ad-text p {
+		font-size: 13px;
+		margin: 5px 0;
+	}
+}
