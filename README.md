@@ -1,13 +1,13 @@
 # [<img src="favicon.ico" width="25px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
 
-[<img src="/images/shot-1.png" />](https://materialpalettes.com)
-[<img src="/images/shot-2.png" />](https://materialpalettes.com)
+[<img src="/images/screenshot-1.png" />](https://materialpalettes.com)
+[<img src="/images/screenshot-2.png" />](https://materialpalettes.com)
 
 ## Sponsor
 
 If you like this tool, be sure to check out the [Figma Material Design UI Kit](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material) and other design assets from [SaaS Design](https://www.saasdesign.io/).
 
-[<img src="/images/shot-3.png" />](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material)
+[<img src="/images/screenshot-3.png" />](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material)
 
 ## What is this?
 
