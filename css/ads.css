@@ -7,6 +7,7 @@ CSS related to advertisement space on the site
   right: 20px;
   top: 60px;
   max-width: 240px;
+	min-height: 120px;
 }
 
 .sub-page .mp-ad {
