@@ -3,6 +3,12 @@
 [<img src="/images/shot-1.png" />](https://materialpalettes.com)
 [<img src="/images/shot-2.png" />](https://materialpalettes.com)
 
+## Sponsor
+
+If you like this tool, be sure to check out the [Figma Material Design UI Kit](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material) and other design assets from [SaaS Design](https://www.saasdesign.io/).
+
+[<img src="/images/shot-3.png" />](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material)
+
 ## What is this?
 
 This is a (slightly modified) clone of the [official Material Design palette generator](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). It does a couple things:
@@ -29,7 +35,7 @@ This tool will always be free but your support is greatly appreciated.
 - [Paypal](https://www.paypal.me/edelstone)
 - [GitHub Sponsors](https://github.com/sponsors/edelstone)
 - Bitcoin: `39t7oofR7AoZoAdH7gJLBrGnrgcJbsqmiP`
-- Other crypto: [email me](mailto:michael.edelstone@gmail.com)
+- Other methods: [email me](mailto:michael.edelstone@gmail.com)
 
 ## Feedback and contributing
 If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:michael.edelstone@gmail.com) the details.
@@ -39,7 +45,6 @@ If you're a developer and want to help with the project, please comment on [open
 ## Credits
 
 - Hi, I'm [Michael Edelstone](https://michaeledelstone.com). You might also be interested in the [Tint & Shade Generator](https://maketintsandshades.com), another useful color tool I made.
-- Thank you to our sponsor, [Saas Design](https://www.saasdesign.io/), creators of the beautiful [Figma Material Design UI Kit](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material).
 - Most of this is copyright Google Inc. If you do anything with their code, please maintain the licenses they indicate at the top of the large files.
 - You can use any of my modifications without credit, except...
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.

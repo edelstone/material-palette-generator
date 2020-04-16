@@ -31,6 +31,10 @@ code {
 	border-radius: 3px;
 }
 
+img {
+	max-width: 100%;
+}
+
 .palettes {
   /* footer is ~71px high */
   min-height: calc(100vh - 71px);
@@ -95,6 +99,12 @@ code {
 
 .page-messaging-subtitle {
   font-size: 20px;
+}
+
+.screenshot {
+	margin-top: 20px;
+	border-radius: 4px;
+	border: 1px solid rgba(0,0,0,0.2);
 }
 
 .standard-link, .page-messaging a {
