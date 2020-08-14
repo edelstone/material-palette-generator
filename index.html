@@ -55,13 +55,28 @@
     </div>
   </div>
   <div class="palettes" id="root-container"></div>
+
   <div class="page-footer">
     <p>
       <a class="standard-link" href="/about">About</a>
       <a class="standard-link" href="/about#support">Support this project</a>
     </p>
   </div>
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>JSON Color Palette</h3>
+      <span class="close">&times;</span>
+    </div>
+    <div>
+      <textarea name="exportedPalettes" onclick="this.select()" readonly id="jsonText"></textarea>
+    </div>
+  </div>
+</div>
   <script src="/js/main.js" defer></script>
+  <script src="/js/export.js" defer></script>
   <script> </script>
 </body>
 
