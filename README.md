@@ -33,9 +33,7 @@ This tool will always be free but your support is greatly appreciated.
 - [Venmo](https://venmo.com/michaeledelstone)
 - [Cash App](https://cash.app/$edelstone)
 - [Paypal](https://www.paypal.me/edelstone)
-- [GitHub Sponsors](https://github.com/sponsors/edelstone)
 - Bitcoin: `39t7oofR7AoZoAdH7gJLBrGnrgcJbsqmiP`
-- Other methods: [email me](mailto:michael.edelstone@gmail.com)
 
 ## Feedback and contributing
 If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:michael.edelstone@gmail.com) the details.
@@ -48,6 +46,8 @@ If you're a developer and want to help with the project, please comment on [open
 - Most of this is copyright Google Inc. If you do anything with their code, please maintain the licenses they indicate at the top of the large files.
 - You can use any of my modifications without credit, except...
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.
+
+Many thanks to [Ziya Fenn](https://github.com/ziyafenn) for their valuable contributions to the project.
 
 ## Tech
 
