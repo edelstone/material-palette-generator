@@ -1,5 +1,3 @@
-const modal = document.querySelector(".modal");
-
 function ExportColor() {
   const colorPalettes = document.querySelectorAll(".color-palette__row");
   const colorSelector = document.querySelectorAll(
@@ -133,29 +131,30 @@ function ExportColor() {
   }
 
   textArea.textContent = JSON.stringify(exported, null, "  ");
-  modal.style.display = "block";
+  modal.showModal();
 }
 
 // Controls
 
-const closeButton = document.querySelector(".close");
+const modal = document.getElementById("exportModal");
+const exportButton = document.querySelector(".close");
 const contentArea = document.querySelector(".color-tool");
 
 contentArea.insertAdjacentHTML(
   "beforeend",
   `
-<div class="buttonContainer"><button class="exportButton"  onclick="ExportColor()">Export Palette</button></div>
+<div class="buttonContainer"><button class="exportButton" tabindex="1" onclick="ExportColor()">Export Palette</button></div>
 `
 );
 
 // When the user clicks on <span> (x), close the modal
-closeButton.onclick = function () {
-  modal.style.display = "none";
+exportButton.onclick = function () {
+  modal.close();
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    modal.close();
   }
 };
