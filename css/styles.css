@@ -209,6 +209,7 @@ img {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.75);
   border: none;
+  padding: 15px;
 }
 
 .modal-content {
@@ -233,27 +234,28 @@ img {
   color: #212121;
 }
 
-.close {
+.modal-content .close {
   color: #212121;
   font-size: 32px;
   font-weight: 500;
   border: none;
-  padding: 0;
   background: #d9d9d9;
   border-radius: 3px;
-  width: 36px;
-  height: 36px;
-  line-height: 0;
+  padding: 20px 10px;
   transition: background .15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 0;
 }
 
-.close:focus,
-.close:hover {
+.modal-content .close:focus,
+.modal-content .close:hover {
   cursor: pointer;
   background: #c6c6c6;
 }
 
-textarea {
+.modal-content textarea {
   resize: none;
   width: 100%;
   height: 60vh;
@@ -263,6 +265,7 @@ textarea {
   border-radius: 4px;
   color: #212121;
   padding: 10px;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .buttonContainer {
@@ -376,5 +379,9 @@ textarea {
 
   .github-corner .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
+  }
+
+  .modal-content {
+    margin-top: 0;
   }
 }
