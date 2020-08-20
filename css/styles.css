@@ -226,6 +226,7 @@ img {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  height: 40px;
 }
 
 .modal-header h3 {
@@ -235,24 +236,21 @@ img {
 }
 
 .modal-content .close {
-  color: #212121;
-  font-size: 32px;
-  font-weight: 500;
+  color: #424242;
   border: none;
-  background: #d9d9d9;
-  border-radius: 50%;
-  padding: 20px 10px;
-  transition: background .15s ease-in-out;
+  padding: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  line-height: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: -4px;
 }
 
-.modal-content .close:focus,
-.modal-content .close:hover {
-  cursor: pointer;
-  background: #c6c6c6;
+.modal-content .close i {
+  font-size: 36px;
 }
 
 .modal-content textarea {
@@ -383,5 +381,14 @@ img {
 
   .modal-content {
     margin-top: 0;
+    height: 100%;
+  }
+
+  .modal-content textarea {
+    height: 100%;
+  }
+
+  .modal-text {
+    height: calc(100% - 60px);
   }
 }
