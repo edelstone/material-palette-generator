@@ -3,12 +3,6 @@
 [<img src="/images/screenshot-1.png" />](https://materialpalettes.com)
 [<img src="/images/screenshot-2.png" />](https://materialpalettes.com)
 
-## Sponsor
-
-If you like this tool, be sure to check out the [Figma Material Design UI Kit](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material) and other design assets from [SaaS Design](https://www.saasdesign.io/).
-
-[<img src="/images/screenshot-3.png" />](https://www.saasdesign.io/figma-material-design-desktop-kit/?utm_source=materialpalettes&utm_medium=banner&utm_campaign=material)
-
 ## What is this?
 
 This is a (slightly modified) clone of the [official Material Design palette generator](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). It does a couple things:
@@ -24,7 +18,9 @@ Google's official palette generator [is embedded and buried deep within the Mate
 
 To make it a little easier to access and to preserve it for my own future use, I grabbed the obfuscated code (the original scripts do not appear to be public anywhere) and added some small interface improvements. I did _not_ change the way colors are derived.
 
-The color output matches that produced in the [Material Theme Editor for Sketch](https://material.io/tools/theme-editor/), so it's a good companion for that.
+## Plugins
+
+After creating palettes and exporting the JSON data, Sketch users can create shared layer styles easily with the [Sketch JSON Color Palette Importer](https://github.com/ziyafenn/sketch-json-color-palette-importer) plugin.
 
 ## Support this project
 This tool will always be free but your support is greatly appreciated.

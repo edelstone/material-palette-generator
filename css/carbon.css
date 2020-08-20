@@ -57,7 +57,7 @@
   padding: 5px 6px;
   border-radius: 2.5px;
   background-color: hsl(246, 93%, 69%);
-  color: #fff !important;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: .5px;
   font-weight: 600;
@@ -72,6 +72,10 @@
 	right: 20px;
 	top: 60px;
 	max-width: 240px;
+}
+
+.carbon-img img {
+  border: 1px solid #424242;
 }
 
 .sub-page .mp-ad {
@@ -89,13 +93,17 @@
 
 .carbon-text {
   font-weight: 400;
-  padding: 0 15px;
+  padding: 0 10px;
+  margin: 12px 0;
+  line-height: 1.4;
 }
 
 .carbon-poweredby {
-  background: #767676;
-  font-weight: 500;
-  padding: 6px 8px;
+  background: none;
+  padding: 0;
+  color: #424242;
+  right: 12px;
+  bottom: 12px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -129,11 +137,6 @@
   .carbon-text {
     text-align: left;
     font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .carbon-text {
-    margin-bottom: 40px;
+    margin: 0;
   }
 }
