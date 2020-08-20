@@ -1,8 +1,8 @@
 # [<img src="favicon.ico" width="25px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
 
-[<img src="/images/screenshot-1.png" />](https://materialpalettes.com)
-[<img src="/images/screenshot-2.png" />](https://materialpalettes.com)
-[<img src="/images/screenshot-3.png" />](https://materialpalettes.com)
+[<img src="/images/1.png" />](https://materialpalettes.com)
+[<img src="/images/2.png" />](https://materialpalettes.com)
+[<img src="/images/3.png" />](https://materialpalettes.com)
 
 ## What is this?
 
