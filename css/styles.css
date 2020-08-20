@@ -262,6 +262,7 @@ textarea {
   border: 1px solid #c6c6c6;
   border-radius: 4px;
   color: #212121;
+  padding: 10px;
 }
 
 .buttonContainer {
@@ -269,16 +270,16 @@ textarea {
 }
 
 .exportButton {
-  padding: 20px 25px;
+  padding: 18px 24px;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: #212121;
-  color: #fff;
-  border: none;
+  background-color: #fff;
+  color: #212121;
+  border: 3px solid #424242;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -288,7 +289,7 @@ textarea {
 .exportButton:active,
 .exportButton:focus,
 .exportButton:hover {
-  background-color: #424242;
+  background-color: #ececec;
 }
 
 @media screen and (max-width: 1000px) {
