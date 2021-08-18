@@ -73,6 +73,17 @@
     </dialog>
     <script src="/js/main.js" defer></script>
     <script src="/js/export.js" defer></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+      // Show a new Carbon ad every time when certain elements are clicked
+      $(document).on('click', '.color-palette__cell, .utility-panel__color-entry, .color-picker', function() {
+        // If the ad hasn't loaded yet, don't refresh it while it's still loading, or it will return two (or more) ads
+        if (!$("#carbonads")[0]) return;
+        // If the script hasn't loaded, don't try calling it
+        if (typeof _carbonads !== 'undefined') _carbonads.refresh();
+      });
+    </script>
+    <!-- Empty script tags below keep CSS transitions from firing on page load. It's a Chrome bug. See here: https://stackoverflow.com/questions/14389566/stop-css-transition-from-firing-on-page-load/42969608#42969608 -->
     <script> </script>
   </body>
 </html>
