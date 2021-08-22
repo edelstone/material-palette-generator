@@ -76,7 +76,7 @@
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script>
       // Show a new Carbon ad every time when certain elements are clicked
-      $(document).on('click', '.color-palette__cell, .utility-panel__color-entry, .color-picker, .exportButton, .carbon-img, .carbon-text', function() {
+      $(document).on('click', '.color-palette__cell, .utility-panel__color-entry, .color-picker, .exportButton, .carbon-img, .carbon-text, .carbon-poweredby', function() {
         // If the ad hasn't loaded yet, don't refresh it while it's still loading, or it will return two (or more) ads
         if (!$("#carbonads")[0]) return;
         // If the script hasn't loaded, don't try calling it
