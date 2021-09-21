@@ -34,6 +34,7 @@ code {
   background: #f0f0f0;
   padding: 2px 4px;
   border-radius: 3px;
+  word-break: break-all;
 }
 
 img {
