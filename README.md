@@ -23,6 +23,8 @@ To make it a little easier to access and to preserve it for my own future use, I
 
 After creating palettes and exporting the JSON data, Sketch users can create shared layer styles easily with the [Sketch JSON Color Palette Importer](https://github.com/ziyafenn/sketch-json-color-palette-importer) plugin.
 
+Visual Studio Code users can take advantage of the [Material Design Palette Generator](https://marketplace.visualstudio.com/items?itemName=piyush-bhatt.vscode-mat-palette) plugin, inspired by and based on this project.
+
 ## Support this project
 This tool will always be free but your support is greatly appreciated.
 
