@@ -31,10 +31,6 @@ This tool will always be free but your support is greatly appreciated.
 - [Venmo](https://venmo.com/michaeledelstone)
 - [Cash App](https://cash.app/$edelstone)
 - [Paypal](https://www.paypal.me/edelstone)
-- Bitcoin: `39t7oofR7AoZoAdH7gJLBrGnrgcJbsqmiP`
-- Dogecoin: `D8TNA7iSD4i5Z3fpbTv5fpgTbq9udo8r1n`
-- Ethereum: `0x830bFE848a8fda9d73bc5A93F0307401d7050A44`
-- Litecoin: `MKazMHFCn3k6cQYuY37GHwrQVwhsrRf8aY`
 
 ## Feedback and contributing
 If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:michael.edelstone@gmail.com) the details.
