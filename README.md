@@ -33,7 +33,7 @@ This tool will always be free but your support is greatly appreciated.
 - [Paypal](https://www.paypal.me/edelstone)
 
 ## Feedback and contributing
-If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:michael.edelstone@gmail.com) the details.
+If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:contact@materialpalettes.com) the details.
 
 If you're a developer and want to help with the project, please comment on [open issues](https://github.com/edelstone/material-palette-generator/issues) or create a new one. Once we agree on a path forward you can just make a pull request and take it to the finish line. No big whoop.
 
