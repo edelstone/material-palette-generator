@@ -221,6 +221,8 @@ img {
   padding: 20px;
   max-width: 600px;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-header {
