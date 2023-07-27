@@ -44,7 +44,7 @@ If you're a developer and want to help with the project, please comment on [open
 - You can use any of my modifications without credit, except...
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.
 
-Many thanks to [Ziya Fenn](https://github.com/ziyafenn) for their valuable contributions to this project.
+Many thanks to [Ziya Fenn](https://github.com/ziyafenn) and [Mateusz Skórka](https://github.com/HotFr1dge) for their valuable contributions to this project.
 
 ## Tech
 
