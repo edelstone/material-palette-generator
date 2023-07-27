@@ -1,6 +1,7 @@
 const modal = document.querySelector(".modal");
 
 function ExportColor() {
+  const exportType = document.querySelector('select#export-type')?.value;
   const colorPalettes = document.querySelectorAll(".color-palette__row");
   const colorSelector = document.querySelectorAll(
     ".color-palette__cell-hex-value"
@@ -132,14 +133,48 @@ function ExportColor() {
     });
   }
 
-  textArea.textContent = JSON.stringify(exported, null, "  ");
+  switch (exportType) {
+    case 'css':
+      textArea.textContent = convertJSONtoCSS(exported);
+      break;
+    case 'json':
+      textArea.textContent = JSON.stringify(exported, null, "  ");
+      break;
+    default:
+      textArea.textContent = JSON.stringify(exported, null, "  ")
+  }
+
   modal.style.display = "block";
+
+}
+
+function convertJSONtoCSS(paletteJSON) {
+  const paletteCSS = [];
+  const mainColors = [];
+
+  [...document.querySelectorAll('.color-palette__cell--selected')].forEach(mainColorElement => {
+    mainColors.push(mainColorElement.querySelector('.color-palette__cell-hex-value').textContent)
+  });
+
+  for (const color in paletteJSON) {
+    const colorName = color.replace(/ /g,'').toLowerCase();
+    Object.entries(paletteJSON[color]).forEach(colorShade => {
+      paletteCSS.push(`--clr-${colorName}-${colorShade[0]}: ${colorShade[1]};`);
+      if (mainColors.includes(colorShade[1])) {
+        paletteCSS.push(`--clr-${colorName}: var(--clr-${colorName}-${colorShade[0]});`);
+      } 
+    });
+  }
+
+  //return paletteCSS;
+  return `:root {\n\t${paletteCSS.join('\n\t')}\n\n}`;
 }
 
 // Controls
 
 const closeButton = document.querySelector(".close");
 const contentArea = document.querySelector(".color-tool");
+const exportTypeSelect = document.querySelector('select#export-type');
 
 contentArea.insertAdjacentHTML(
   "beforeend",
