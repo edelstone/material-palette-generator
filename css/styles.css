@@ -3,14 +3,17 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
 */
 
 @keyframes octocat-wave {
+
   0%,
   100% {
     transform: rotate(0);
   }
+
   20%,
   60% {
     transform: rotate(-25deg);
   }
+
   40%,
   80% {
     transform: rotate(10deg);
@@ -143,8 +146,7 @@ img {
   display: none;
 }
 
-.utility-panel {
-}
+.utility-panel {}
 
 .utility-panel__label {
   cursor: default;
@@ -227,6 +229,10 @@ img {
   align-items: center;
   margin-bottom: 20px;
   height: 40px;
+}
+
+.modal-contol {
+  padding-block: 5px;
 }
 
 .modal-header h3 {
