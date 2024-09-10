@@ -1,26 +1,22 @@
-/* Original CSS from Carbon https://codepen.io/team/buysellads/pen/LYPGKjy */
-
 #carbonads {
   position: relative;
   display: flex;
-  width: 300px;
-  height: 250px;
-  background-color: #fff;
+  width: 100%;
+  min-height: 280px;
+  height: auto;
+  background: var(--gray-50);
   box-shadow: inset 0 0 1px 1px hsla(0, 0%, 0%, .15);
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
-  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
   justify-content: center;
   align-items: center;
+  border-radius: 4px;
 }
 
-#carbonads a {
-  color: #111;
-  text-decoration: none;
-}
-
+#carbonads a,
 #carbonads a:hover {
-  color: #111;
+  color: var(--gray-500);
+  text-decoration: none;
 }
 
 #carbonads span {
@@ -29,81 +25,52 @@
 }
 
 .carbon-img {
-  display: block;
   margin: 0 0 8px;
   line-height: 1;
+  display: block;
 }
 
 .carbon-img img {
   max-width: 150px !important;
   width: 150px;
   height: auto;
+  border: 1px solid var(--gray-400);
 }
 
 .carbon-text {
   display: block;
-  margin-bottom: 8px;
-  padding: 0 10px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.35;
-}
-
-.carbon-poweredby {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  display: block;
-  padding: 5px 6px;
-  border-radius: 2.5px;
-  background-color: hsl(246, 93%, 69%);
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  font-weight: 600;
-  font-size: 8px;
-  line-height: 1;
-}
-
-/* Custom overrides */
-
-.mp-ad {
-	position: absolute;
-	right: 20px;
-	top: 60px;
-	max-width: 240px;
-}
-
-.carbon-img img {
-  border: 1px solid #424242;
-}
-
-.sub-page .mp-ad {
-  top: 0;
-}
-
-#carbonads {
-  font-family:'Roboto', sans-serif;
-  width: 100%;
-  border-radius: 4px;
-  min-height: 280px;
-  height: auto;
-  background: #fafafa;
-}
-
-.carbon-text {
-  font-weight: 400;
-  padding: 0 10px;
   margin: 12px 0;
+  padding: 0 10px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.4;
 }
 
 .carbon-poweredby {
-  background: none;
-  padding: 0;
-  color: #424242;
+  position: absolute;
   right: 12px;
   bottom: 12px;
+  display: block;
+  padding: 0;
+  border-radius: 2.5px;
+  background: none;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 1;
+}
+
+.mp-ad {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  max-width: 240px;
+}
+
+.sub-page .mp-ad {
+  top: 0;
 }
 
 @media screen and (max-width: 1000px) {

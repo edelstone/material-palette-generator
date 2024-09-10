@@ -1,8 +1,7 @@
-# [<img src="favicon.ico" width="25px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
+# [<img src="icon.svg" width="28px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
 
-[<img src="/images/ss-1.png" />](https://materialpalettes.com)
-[<img src="/images/ss-2.png" />](https://materialpalettes.com)
-[<img src="/images/ss-3.png" />](https://materialpalettes.com)
+[<img src="images/palettes.png" />](https://materialpalettes.com)
+[<img src="images/dialog.png" />](https://materialpalettes.com)
 
 ## What is this?
 
@@ -35,7 +34,7 @@ This tool will always be free but your support is greatly appreciated.
 ## Feedback and contributing
 If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:contact@materialpalettes.com) the details.
 
-If you're a developer and want to help with the project, please comment on [open issues](https://github.com/edelstone/material-palette-generator/issues) or create a new one. Once we agree on a path forward you can just make a pull request and take it to the finish line. No big whoop.
+If you're a developer and want to help with the project, please comment on [open issues](https://github.com/edelstone/material-palette-generator/issues) or create a new one. Once we agree on a path forward you can just make a pull request and take it to the finish line.
 
 ## Credits
 
@@ -45,7 +44,3 @@ If you're a developer and want to help with the project, please comment on [open
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.
 
 Many thanks to [Ziya Fenn](https://github.com/ziyafenn) and [Mateusz Skórka](https://github.com/HotFr1dge) for their valuable contributions to this project.
-
-## Tech
-
-It's just HTML, CSS, and JavaScript. Run it locally on your favorite server.

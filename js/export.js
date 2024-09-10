@@ -157,12 +157,12 @@ function convertJSONtoCSS(paletteJSON) {
   });
 
   for (const color in paletteJSON) {
-    const colorName = color.replace(/ /g,'').toLowerCase();
+    const colorName = color.replace(/ /g, '').toLowerCase();
     Object.entries(paletteJSON[color]).forEach(colorShade => {
       paletteCSS.push(`--clr-${colorName}-${colorShade[0]}: ${colorShade[1]};`);
       if (mainColors.includes(colorShade[1])) {
         paletteCSS.push(`--clr-${colorName}: var(--clr-${colorName}-${colorShade[0]});`);
-      } 
+      }
     });
   }
 

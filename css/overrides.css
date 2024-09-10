@@ -1,6 +1,17 @@
 /*
-Just some local overrides so Google's original stylesheet (main.css) can remain unedited.
+Local overrides so Google's original stylesheet (main.css) can remain unedited.
 */
+
+:root {
+  --white: #ffffff;
+  --hot-pink: #c6006e;
+  --gray-50: #fafafa;
+  --gray-100: #f0f0f0;
+  --gray-200: #ececec;
+  --gray-300: #c6c6c6;
+  --gray-400: #424242;
+  --gray-500: #212121;
+}
 
 @keyframes octocat-wave {
 
@@ -28,26 +39,12 @@ Just some local overrides so Google's original stylesheet (main.css) can remain 
 
 body {
   font-family: "Roboto", sans-serif;
-  color: #424242;
-}
-
-code {
-  font-family: Consolas, monospace;
-  font-size: 85%;
-  background: #f0f0f0;
-  padding: 2px 4px;
-  border-radius: 3px;
-  word-break: break-all;
+  color: var(--gray-400);
 }
 
 img {
   max-width: 100%;
   border-radius: 4px;
-}
-
-.palettes {
-  /* footer is ~71px high */
-  min-height: calc(100vh - 71px);
 }
 
 .color-tool {
@@ -73,9 +70,10 @@ img {
 }
 
 .page-title a {
-  color: #424242;
+  color: var(--gray-400);
+  font-weight: 500;
   text-decoration: none;
-  font-weight: 100;
+  letter-spacing: -0.5px;
 }
 
 .page-title a:active,
@@ -86,7 +84,7 @@ img {
 
 .page-messaging {
   margin-top: 60px;
-  font-weight: normal;
+  font-weight: 400;
   padding-bottom: 40px;
   max-width: 680px;
   line-height: 1.4;
@@ -101,7 +99,7 @@ img {
 
 .page-messaging-title {
   font-size: 120px;
-  font-weight: bold;
+  font-weight: 700;
   animation: rotate 120s linear infinite;
   display: inline-block;
   margin: 25px 0;
@@ -118,7 +116,8 @@ img {
 
 .standard-link,
 .page-messaging a {
-  color: #007c6e;
+  color: var(--hot-pink);
+  font-weight: 500;
 }
 
 .standard-link:active,
@@ -145,8 +144,6 @@ img {
 .utility-panel .content__info {
   display: none;
 }
-
-.utility-panel {}
 
 .utility-panel__label {
   cursor: default;
@@ -184,23 +181,21 @@ img {
 }
 
 .page-footer {
-  padding: 0 40px 60px;
-  font-weight: 500;
+  padding: 0 40px 80px;
 }
 
 .page-footer.footer-alt {
   padding-left: 0;
 }
 
-.page-footer p {
-  margin-top: 0;
+.page-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 28px;
 }
 
-.page-footer a:first-child {
-  margin-right: 25px;
-}
-
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -216,7 +211,7 @@ img {
 }
 
 .modal-content {
-  background-color: #ececec;
+  background-color: var(--gray-200);
   margin: 50px auto 0;
   padding: 20px;
   max-width: 600px;
@@ -240,11 +235,11 @@ img {
 .modal-header h3 {
   margin: 0;
   font-weight: 500;
-  color: #212121;
+  color: var(--gray-500);
 }
 
 .modal-content .close {
-  color: #424242;
+  color: var(--gray-400);
   border: none;
   padding: 0;
   -webkit-appearance: none;
@@ -267,9 +262,9 @@ img {
   height: 60vh;
   font-size: 16px;
   line-height: 1.4;
-  border: 1px solid #c6c6c6;
+  border: 1px solid var(--gray-300);
   border-radius: 4px;
-  color: #212121;
+  color: var(--gray-500);
   padding: 10px;
   font-family: 'Roboto Mono', monospace;
 }
@@ -282,9 +277,9 @@ img {
   padding: 18px 24px;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: #fff;
-  color: #212121;
-  border: 3px solid #424242;
+  background-color: var(--white);
+  color: var(--gray-500);
+  border: 3px solid var(--gray-400);
   border-radius: 4px;
   font-size: 16px;
   font-weight: 700;
@@ -298,12 +293,12 @@ img {
 .exportButton:active,
 .exportButton:focus,
 .exportButton:hover {
-  background-color: #ececec;
+  background-color: var(--gray-200);
 }
 
 @media screen and (max-width: 1000px) {
   body {
-    background-color: #fff;
+    background-color: var(--white);
   }
 
   .color-tool {
@@ -351,7 +346,7 @@ img {
   }
 
   .page-footer {
-    padding: 0 20px 60px;
+    padding-left: 20px;
   }
 }
 
@@ -376,7 +371,7 @@ img {
   }
 
   .page-footer {
-    padding: 0 10px 60px;
+    padding-left: 10px;
   }
 
   .github-corner:hover .octo-arm {
