@@ -232,7 +232,7 @@ img {
   padding-block: 5px;
 }
 
-.modal-header h3 {
+.modal-header h2 {
   margin: 0;
   font-weight: 500;
   color: var(--gray-500);
