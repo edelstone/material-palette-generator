@@ -1,7 +1,7 @@
 # [<img src="icon.svg" width="28px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
 
-[<img src="images/palettes.png" />](https://materialpalettes.com)
-[<img src="images/dialog.png" />](https://materialpalettes.com)
+[<img src="images/colors.png" />](https://materialpalettes.com)
+[<img src="images/export.png" />](https://materialpalettes.com)
 
 ## What is this?
 
