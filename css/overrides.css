@@ -38,7 +38,7 @@ Local overrides so Google's original stylesheet (main.css) can remain unedited.
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--gray-400);
 }
 
@@ -154,7 +154,7 @@ img {
 }
 
 .color-palette__color-weight-label {
-  font-family: Courier, monospace;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
 }
 
 .color-palette__cell-hex-value {
@@ -257,6 +257,7 @@ img {
 }
 
 .modal-content textarea {
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   resize: none;
   width: 100%;
   height: 60vh;
@@ -266,7 +267,6 @@ img {
   border-radius: 4px;
   color: var(--gray-500);
   padding: 10px;
-  font-family: 'Roboto Mono', monospace;
 }
 
 .buttonContainer {
@@ -382,6 +382,10 @@ img {
     animation: octocat-wave 560ms ease-in-out;
   }
 
+  .color-palette__color-weight-label {
+    font-size: 13px;
+  }
+
   .modal-content {
     margin-top: 0;
     height: 100%;
@@ -389,6 +393,7 @@ img {
 
   .modal-content textarea {
     height: 100%;
+    font-size: 14px;
   }
 
   .modal-text {
