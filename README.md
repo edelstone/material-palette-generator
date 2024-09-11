@@ -5,10 +5,12 @@
 
 ## What is this?
 
-This is a (slightly modified) clone of the [official Material Design palette generator](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). It does a couple things:
+This is a (slightly modified) clone of the [official Material Design palette generator](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). It does a few things:
 
 1. Builds you a full color palette from a given hex color
-2. Provides you with complementary colors based off your primary color
+1. Provides you with complementary colors based off your primary color
+1. Allows you to export the palettes as JSON or CSS variables
+
 
 Both are based on Material Design standards, and use Google's algorithm for color derivation.
 
