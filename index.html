@@ -84,9 +84,9 @@
   <script src="/js/main.js" defer></script>
   <script src="/js/export.js" defer></script>
   <script>
-    // Show a new Carbon ad every time when certain elements are clicked
+    // Show a new Carbon ad when certain elements are clicked
     document.addEventListener('click', function (event) {
-      if (event.target.matches('.color-palette__cell, .utility-panel__color-entry, .color-picker, .exportButton, .carbon-img, .carbon-text, .carbon-poweredby')) {
+      if (event.target.matches('.utility-panel__ripple, .exportButton')) {
         // If the ad hasn't loaded yet, don't refresh it while it's still loading, or it will return two (or more) ads
         if (!document.getElementById('carbonads')) return;
         // If the script hasn't loaded, don't try calling it
