@@ -28,9 +28,9 @@ To make it a little easier to access and to preserve it for my own future use, I
 This tool will always be free but your support is greatly appreciated.
 
 - [Buy Me a Coffee](https://www.buymeacoffee.com/edelstone)
-- [Venmo](https://venmo.com/michaeledelstone)
 - [Cash App](https://cash.app/$edelstone)
 - [Paypal](https://www.paypal.me/edelstone)
+- [Venmo](https://venmo.com/michaeledelstone)
 
 ## Feedback and contributing
 If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:contact@materialpalettes.com) the details.
