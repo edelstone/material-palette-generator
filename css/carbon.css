@@ -4,18 +4,24 @@
   width: 100%;
   min-height: 280px;
   height: auto;
-  background: var(--gray-50);
-  box-shadow: inset 0 0 1px 1px hsla(0, 0%, 0%, .15);
+  background: var(--surface-color);
+  box-shadow: inset 0 0 1px 1px var(--border-color);
   text-align: center;
-	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-family: var(--font-body);
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+  transition: background-color var(--transition-speed) var(--transition-curve), color var(--transition-speed) var(--transition-curve), border-color var(--transition-speed) var(--transition-curve), box-shadow var(--transition-speed) var(--transition-curve);
+}
+
+html[data-theme="dark"] #carbonads {
+  background: var(--surface-color-reverse);
+  box-shadow: none;
 }
 
 #carbonads a,
 #carbonads a:hover {
-  color: var(--gray-500);
+  color: var(--text-primary);
   text-decoration: none;
 }
 
@@ -34,7 +40,7 @@
   max-width: 150px !important;
   width: 150px;
   height: auto;
-  border: 1px solid var(--gray-400);
+  border: 1px solid var(--border-color-dark);
 }
 
 .carbon-text {
@@ -46,7 +52,7 @@
   line-height: 1.4;
 }
 
-.carbon-poweredby {
+#carbonads .carbon-poweredby {
   position: absolute;
   right: 12px;
   bottom: 12px;
@@ -54,7 +60,7 @@
   padding: 0;
   border-radius: 2.5px;
   background: none;
-  color: var(--gray-400);
+  color: var(--text-subtle);
   text-transform: uppercase;
   letter-spacing: .5px;
   font-weight: 700;

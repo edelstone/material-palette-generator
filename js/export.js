@@ -166,8 +166,7 @@ function convertJSONtoCSS(paletteJSON) {
     });
   }
 
-  //return paletteCSS;
-  return `:root {\n\t${paletteCSS.join('\n\t')}\n\n}`;
+  return `:root {\n  ${paletteCSS.join('\n  ')}\n}`;
 }
 
 // Controls
@@ -179,7 +178,7 @@ const exportTypeSelect = document.querySelector('select#export-type');
 contentArea.insertAdjacentHTML(
   "beforeend",
   `
-<div class="buttonContainer"><button class="exportButton" onclick="ExportColor()">Export Palette</button></div>
+<div class="buttonContainer"><button class="exportButton" onclick="ExportColor()"><i class="material-icons" aria-hidden="true">file_download</i><span>Export palette</span></button></div>
 `
 );
 

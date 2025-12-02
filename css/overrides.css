@@ -3,14 +3,33 @@ Local overrides so Google's original stylesheet (main.css) can remain unedited.
 */
 
 :root {
-  --white: #ffffff;
-  --hot-pink: #c6006e;
-  --gray-50: #fafafa;
-  --gray-100: #f0f0f0;
-  --gray-200: #ececec;
-  --gray-300: #c6c6c6;
-  --gray-400: #424242;
-  --gray-500: #212121;
+  --surface-color: #ffffff;
+  --surface-color-reverse: #0f172a;
+  --accent-color: #e7e8ea;
+  --text-primary: #272e3f;
+  --text-reverse: #ffffff;
+  --text-subtle: #575d6a;
+  --text-link: #c6006e;
+  --border-color: #b7b9bf;
+  --border-color-dark: #575d6a;
+  --button-dark: #3f4555;
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.5);
+  --transition-speed: 160ms;
+  --transition-curve: ease;
+  --font-body: "Roboto", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Roboto Mono", "SFMono-Regular", ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, "Liberation Mono", monospace;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --surface-color: #0f172a;
+  --surface-color-reverse: #0c1222;
+  --accent-color: #0c1222;
+  --text-primary: #e7e8ea;
+  --text-subtle: #cfd1d4;
+  --text-link: #ef3a8e;
+  --border-color: #6f747f;
+  color-scheme: dark;
 }
 
 @keyframes octocat-wave {
@@ -38,8 +57,10 @@ Local overrides so Google's original stylesheet (main.css) can remain unedited.
 }
 
 body {
-	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  color: var(--gray-400);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--surface-color);
+  transition: background-color var(--transition-speed) var(--transition-curve), color var(--transition-speed) var(--transition-curve);
 }
 
 img {
@@ -50,6 +71,8 @@ img {
 .color-tool {
   max-width: none;
   padding: 140px 40px 60px;
+  background-color: var(--surface-color);
+  transition: background-color var(--transition-speed) var(--transition-curve);
 }
 
 .tool-title {
@@ -70,7 +93,7 @@ img {
 }
 
 .page-title a {
-  color: var(--gray-400);
+  color: var(--text-primary);
   font-weight: 500;
   text-decoration: none;
   letter-spacing: -0.5px;
@@ -88,6 +111,7 @@ img {
   padding-bottom: 40px;
   max-width: 680px;
   line-height: 1.4;
+  color: var(--text-primary);
 }
 
 .page-messaging h2 {
@@ -95,6 +119,7 @@ img {
   margin: 15px 0;
   font-size: 24px;
   padding-top: 20px;
+  color: var(--text-primary);
 }
 
 .page-messaging-title {
@@ -107,6 +132,7 @@ img {
 
 .page-messaging-subtitle {
   font-size: 20px;
+  color: var(--text-subtle);
 }
 
 .screenshot {
@@ -116,7 +142,7 @@ img {
 
 .standard-link,
 .page-messaging a {
-  color: var(--hot-pink);
+  color: var(--text-link);
   font-weight: 500;
 }
 
@@ -131,6 +157,11 @@ img {
 
 .color-palette__color-weight-label {
   max-width: 64px;
+  color: var(--text-subtle);
+}
+
+.color-palette__label {
+  color: var(--text-subtle);
 }
 
 .utility-panel {
@@ -139,6 +170,11 @@ img {
   height: 120px;
   position: absolute;
   width: 240px;
+  background-color: var(--surface-color-reverse);
+}
+
+.utility-panel__color-entry {
+  border-color: var(--border-color-dark);
 }
 
 .utility-panel .content__info {
@@ -147,6 +183,7 @@ img {
 
 .utility-panel__label {
   cursor: default;
+  font-size: 16px;
 }
 
 .utility-panel__label i {
@@ -154,12 +191,16 @@ img {
 }
 
 .color-palette__color-weight-label {
-  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family: var(--font-mono);
 }
 
 .color-palette__cell-hex-value {
   text-transform: lowercase;
   left: auto;
+  background-color: var(--surface-color-reverse);
+  color: var(--text-reverse);
+  border-radius: 4px;
+  box-shadow: 0 0 1px var(--border-color)
 }
 
 .clipboard-confirmation {
@@ -169,11 +210,24 @@ img {
   padding: 5px 25px;
   text-align: center;
   width: 220px;
+  background-color: var(--surface-color-reverse);
+  color: var(--text-reverse);
+  box-shadow: 0 0 1px var(--border-color)
 }
 
 .clipboard-confirmation--visible {
   animation: fadein 250ms linear;
   transform: translateY(-20px);
+}
+
+.github-corner {
+  fill: var(--surface-color-reverse);
+  color: var(--text-reverse);
+  position: absolute;
+  top: 0;
+  border: 0;
+  left: 0;
+  transform: scale(-1, 1);
 }
 
 .github-corner:hover .octo-arm {
@@ -182,6 +236,9 @@ img {
 
 .page-footer {
   padding: 0 40px 80px;
+  color: var(--text-primary);
+  background-color: var(--surface-color);
+  transition: background-color var(--transition-speed) var(--transition-curve), color var(--transition-speed) var(--transition-curve);
 }
 
 .page-footer.footer-alt {
@@ -205,19 +262,21 @@ img {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.80);
+  background-color: rgba(0, 0, 0, 0.75);
   border: none;
   padding: 15px;
 }
 
 .modal-content {
-  background-color: var(--gray-200);
   margin: 50px auto 0;
   padding: 20px;
   max-width: 600px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  background-color: var(--accent-color);
+  box-shadow: var(--shadow-soft);
+  color: var(--text-primary);
 }
 
 .modal-header {
@@ -226,20 +285,21 @@ img {
   align-items: center;
   margin-bottom: 20px;
   height: 40px;
+  color: var(--text-primary);
 }
 
 .modal-control {
-  padding-block: 5px;
+  margin-bottom: 10px;
 }
 
 .modal-header h2 {
   margin: 0;
   font-weight: 500;
-  color: var(--gray-500);
+  color: var(--text-primary);
 }
 
 .modal-content .close {
-  color: var(--gray-400);
+  color: var(--text-primary);
   border: none;
   padding: 0;
   -webkit-appearance: none;
@@ -250,23 +310,37 @@ img {
   align-items: center;
   position: relative;
   right: -4px;
+  background: transparent;
 }
 
 .modal-content .close i {
   font-size: 36px;
 }
 
+.modal-control select {
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 4px 2px;
+}
+
 .modal-content textarea {
-  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family: var(--font-mono);
   resize: none;
   width: 100%;
   height: 60vh;
   font-size: 16px;
   line-height: 1.4;
-  border: 1px solid var(--gray-300);
+  border-color: var(--border-color);
   border-radius: 4px;
-  color: var(--gray-500);
+  color: var(--text-primary);
   padding: 10px;
+  background-color: var(--surface-color);
+}
+
+html[data-theme="dark"] .modal-content textarea {
+  border-color: var(--surface-color);
 }
 
 .buttonContainer {
@@ -274,31 +348,95 @@ img {
 }
 
 .exportButton {
-  padding: 18px 24px;
+  padding: 16px 24px;
   cursor: pointer;
-  text-transform: uppercase;
-  background-color: var(--white);
-  color: var(--gray-500);
-  border: 3px solid var(--gray-400);
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: 1px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  transition: background-color .15s ease-in-out;
+  transition: background-color var(--transition-speed) var(--transition-curve), color var(--transition-speed) var(--transition-curve), border-color var(--transition-speed) var(--transition-curve);
 }
 
 .exportButton:active,
 .exportButton:focus,
 .exportButton:hover {
-  background-color: var(--gray-200);
+  background-color: var(--accent-color);
+}
+
+.exportButton i {
+  font-size: 22px;
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+}
+
+.theme-toggle__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  min-width: 130px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color var(--transition-speed) var(--transition-curve), color var(--transition-speed) var(--transition-curve), border-color var(--transition-speed) var(--transition-curve);
+}
+
+.theme-toggle__button i {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle__button:active,
+.theme-toggle__button:focus,
+.theme-toggle__button:hover {
+  background-color: var(--accent-color);
+}
+
+.color-picker-panel {
+  background-color: var(--surface-color-reverse);
+  box-shadow: var(--shadow-soft);
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.color-picker-panel .color-picker-inputs__hex {
+  background-color: var(--surface-color-reverse);
+  border-color: var(--border-color-dark);
+  color: var(--text-reverse);
+}
+
+.color-picker-panel__remove {
+  border-top: none;
+}
+
+.color-picker-panel__remove-button {
+  background-color: var(--button-dark);
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 1000px) {
   body {
-    background-color: var(--white);
+    background-color: var(--surface-color);
   }
 
   .color-tool {
@@ -330,16 +468,15 @@ img {
 
   .utility-panel {
     left: 20px;
-    position: absolute;
+    top: 20px;
   }
 
   .color-picker-panel {
-    left: 40px;
-    top: 40px;
-    position: absolute;
+    left: 30px;
+    top: 30px;
   }
 
-  .github-corner svg {
+  .github-corner {
     transform: scale(1, 1) !important;
     right: 0 !important;
     left: auto !important;
@@ -358,12 +495,12 @@ img {
 
   .utility-panel {
     left: 10px;
-    width: 220px;
+    width: 230px;
   }
 
   .color-picker-panel {
-    left: 30px;
-    top: 30px;
+    left: 15px;
+    top: 25px;
   }
 
   .page-content {
@@ -398,5 +535,10 @@ img {
 
   .modal-text {
     height: calc(100% - 60px);
+  }
+
+  .theme-toggle {
+    right: 10px;
+    bottom: 10px;
   }
 }
