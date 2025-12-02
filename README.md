@@ -1,7 +1,20 @@
 # [<img src="icon.svg" width="28px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
 
-[<img src="images/browser-shot-1.png" />](https://materialpalettes.com)
-[<img src="images/browser-shot-2.png" />](https://materialpalettes.com)
+<a href="https://materialpalettes.com">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="images/home-dark.png" />
+   <source media="(prefers-color-scheme: light)" srcset="images/home-light.png" />
+   <img alt="Screenshot of app home page" src="assets/home-light.png" />
+ </picture>
+</a>
+
+<a href="https://maketintsandshades.com">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="images/dialog-dark.png" />
+   <source media="(prefers-color-scheme: light)" srcset="images/dialog-light.png" />
+   <img alt="Screenshot of app home page" src="assets/dialog-light.png" />
+ </picture>
+</a>
 
 ## What is this?
 
