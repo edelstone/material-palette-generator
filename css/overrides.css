@@ -104,6 +104,10 @@ img {
   text-decoration: underline;
 }
 
+#root-container {
+  min-height: 70vh;
+}
+
 .page-messaging {
   margin-top: 60px;
   font-weight: 400;
@@ -260,12 +264,13 @@ html[data-theme="dark"] .clipboard-confirmation {
   background-color: rgba(0, 0, 0, 0.75);
   border: none;
   padding: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
-  margin: 50px auto 0;
   padding: 20px;
-  max-width: 600px;
+  width: min(90vw, 600px);
   border-radius: 4px;
   display: flex;
   flex-direction: column;

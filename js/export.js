@@ -144,7 +144,7 @@ function ExportColor() {
       textArea.textContent = JSON.stringify(exported, null, "  ")
   }
 
-  modal.style.display = "block";
+  modal.style.display = "flex";
 
 }
 
