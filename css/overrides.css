@@ -100,7 +100,6 @@ img {
 }
 
 .page-title a:active,
-.page-title a:focus,
 .page-title a:hover {
   text-decoration: underline;
 }
@@ -142,10 +141,8 @@ img {
 }
 
 .standard-link:active,
-.standard-link:focus,
 .standard-link:hover,
 .page-messaging a:active,
-.page-messaging a:focus,
 .page-messaging a:hover {
   text-decoration: none;
 }
@@ -195,7 +192,6 @@ img {
   background-color: var(--surface-color-reverse);
   color: var(--text-reverse);
   border-radius: 4px;
-  box-shadow: 0 0 1px var(--border-color)
 }
 
 .clipboard-confirmation {
@@ -207,7 +203,11 @@ img {
   width: 220px;
   background-color: var(--surface-color-reverse);
   color: var(--text-reverse);
-  box-shadow: 0 0 1px var(--border-color)
+}
+
+html[data-theme="dark"] .color-palette__cell-hex-value,
+html[data-theme="dark"] .clipboard-confirmation {
+  box-shadow: 0 0 0 1px var(--border-color)
 }
 
 .clipboard-confirmation--visible {
@@ -361,7 +361,6 @@ html[data-theme="dark"] .modal-content textarea {
 }
 
 .exportButton:active,
-.exportButton:focus,
 .exportButton:hover {
   background-color: var(--accent-color);
 }
@@ -401,7 +400,6 @@ html[data-theme="dark"] .modal-content textarea {
 }
 
 .theme-toggle__button:active,
-.theme-toggle__button:focus,
 .theme-toggle__button:hover {
   background-color: var(--accent-color);
 }
