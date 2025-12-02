@@ -421,6 +421,7 @@ html[data-theme="dark"] .modal-content textarea {
   background-color: var(--surface-color-reverse);
   border-color: var(--border-color-dark);
   color: var(--text-reverse);
+  border-radius: 4px;
 }
 
 .color-picker-panel__remove {
