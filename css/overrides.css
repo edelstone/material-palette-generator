@@ -6,6 +6,7 @@ Local overrides so Google's original stylesheet (main.css) can remain unedited.
   --surface-color: #ffffff;
   --surface-color-reverse: #0f172a;
   --accent-color: #e7e8ea;
+  --accent-color-light: #f3f4f5;
   --text-primary: #272e3f;
   --text-reverse: #ffffff;
   --text-subtle: #575d6a;
@@ -367,6 +368,11 @@ html[data-theme="dark"] .modal-content textarea {
 
 .exportButton:active,
 .exportButton:hover {
+  background-color: var(--accent-color-light);
+}
+
+html[data-theme="dark"] .exportButton:active,
+html[data-theme="dark"] .exportButton:hover {
   background-color: var(--accent-color);
 }
 
@@ -406,6 +412,11 @@ html[data-theme="dark"] .modal-content textarea {
 
 .theme-toggle__button:active,
 .theme-toggle__button:hover {
+  background-color: var(--accent-color-light);
+}
+
+html[data-theme="dark"] .theme-toggle__button:active,
+html[data-theme="dark"] .theme-toggle__button:hover {
   background-color: var(--accent-color);
 }
 
