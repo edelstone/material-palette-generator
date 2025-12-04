@@ -7,6 +7,7 @@
   const store = nd.store;
   const params = new URLSearchParams(window.location.search);
   const hadParams = params.has('primary') || params.has('secondary');
+  let everPersisted = hadParams;
   const defaultPrimaryHex = typeof Bc !== 'undefined' ? Q(S(Bc)).toLowerCase() : null;
 
   const normalizeHexParam = (value) => {
@@ -43,7 +44,7 @@
 
     if (primaryHex === lastPrimary && secondaryHex === lastSecondary) return;
 
-    const shouldPersist = hadParams || (defaultPrimaryHex ? primaryHex !== defaultPrimaryHex : true) || !!secondaryHex;
+    const shouldPersist = hadParams || everPersisted || (defaultPrimaryHex ? primaryHex !== defaultPrimaryHex : true) || !!secondaryHex;
     if (!shouldPersist) return;
 
     const url = new URL(window.location.href);
@@ -56,7 +57,10 @@
 
     const next = url.pathname + url.search + url.hash;
     const current = window.location.pathname + window.location.search + window.location.hash;
-    if (next !== current) window.history.replaceState(null, '', next);
+    if (next !== current) {
+      window.history.replaceState(null, '', next);
+      everPersisted = true;
+    }
 
     lastPrimary = primaryHex;
     lastSecondary = secondaryHex;
