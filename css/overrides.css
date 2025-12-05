@@ -291,6 +291,8 @@ html[data-theme="dark"] .clipboard-confirmation {
   padding: 15px;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 240ms ease;
 }
 
 body.modal-open {
@@ -300,14 +302,26 @@ body.modal-open {
 .modal-content {
   padding: 20px;
   width: min(90vw, 600px);
+  max-height: min(600px, calc(100vh - 30px));
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   background-color: var(--accent-color);
   box-shadow: var(--shadow-soft);
   color: var(--text-primary);
-  max-height: min(600px, calc(100vh - 30px));
   overflow: hidden;
+  transform: translateY(-10px) scale(0.97);
+  opacity: 0;
+  transition: transform 280ms ease, opacity 280ms ease;
+}
+
+.modal.is-open .modal-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal.is-open {
+  opacity: 1;
 }
 
 .modal-header {

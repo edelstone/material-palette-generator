@@ -134,12 +134,18 @@ function openModal() {
   focusActiveTab();
   activateFocusTrap();
   isModalOpen = true;
+  if (modal && typeof requestAnimationFrame === 'function') {
+    requestAnimationFrame(() => modal.classList.add('is-open'));
+  } else if (modal) {
+    modal.classList.add('is-open');
+  }
 }
 
 function closeModal() {
   if (!modal || !isModalOpen) return;
 
   modal.style.display = "none";
+  modal.classList.remove('is-open');
   deactivateFocusTrap();
   isModalOpen = false;
   resetExportOutputScroll();
