@@ -10,9 +10,9 @@
 
 <a href="https://maketintsandshades.com">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="images/dialog-dark.png" />
-   <source media="(prefers-color-scheme: light)" srcset="images/dialog-light.png" />
-   <img alt="Screenshot of app home page" src="assets/dialog-light.png" />
+   <source media="(prefers-color-scheme: dark)" srcset="images/export-dark.png" />
+   <source media="(prefers-color-scheme: light)" srcset="images/export-light.png" />
+   <img alt="Screenshot of app home page" src="assets/export-light.png" />
  </picture>
 </a>
 
