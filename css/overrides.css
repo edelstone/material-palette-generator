@@ -309,7 +309,7 @@ html.no-palette-transition .color-palette__cell {
 .modal-content {
   padding: 20px;
   width: min(90vw, 600px);
-  max-height: min(800px, calc(100vh - 30px));
+  max-height: min(600px, calc(100vh - 30px));
   border-radius: 4px;
   display: flex;
   flex-direction: column;
