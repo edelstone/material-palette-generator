@@ -246,6 +246,9 @@ img {
   width: 220px;
   background-color: var(--surface-color-reverse);
   color: var(--text-reverse);
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
 }
 
 html[data-theme="dark"] .color-palette__cell-hex-value,
