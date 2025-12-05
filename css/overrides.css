@@ -69,6 +69,20 @@ img {
   border-radius: 4px;
 }
 
+.github-corner {
+  fill: var(--surface-color-reverse);
+  color: var(--text-reverse);
+  position: absolute;
+  top: 0;
+  border: 0;
+  left: 0;
+  transform: scale(-1, 1);
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
 .color-tool {
   max-width: none;
   padding: 140px 40px 60px;
@@ -187,6 +201,30 @@ img {
   display: none;
 }
 
+.color-picker-panel {
+  background-color: var(--surface-color-reverse);
+  box-shadow: var(--shadow-soft);
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.color-picker-panel .color-picker-inputs__hex {
+  background-color: var(--surface-color-reverse);
+  border-color: var(--border-color-dark);
+  color: var(--text-reverse);
+  border-radius: 4px;
+}
+
+.color-picker-panel__remove {
+  border-top: none;
+}
+
+.color-picker-panel__remove-button {
+  background-color: var(--button-dark);
+  border-radius: 4px;
+}
+
 .color-palette__color-weight-label {
   font-family: var(--font-mono);
 }
@@ -218,20 +256,6 @@ html[data-theme="dark"] .clipboard-confirmation {
 .clipboard-confirmation--visible {
   animation: fadein 250ms linear;
   transform: translateY(-20px);
-}
-
-.github-corner {
-  fill: var(--surface-color-reverse);
-  color: var(--text-reverse);
-  position: absolute;
-  top: 0;
-  border: 0;
-  left: 0;
-  transform: scale(-1, 1);
-}
-
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
 }
 
 .page-footer {
@@ -445,30 +469,6 @@ html[data-theme="dark"] .theme-toggle__button:hover {
   background-color: var(--accent-color);
 }
 
-.color-picker-panel {
-  background-color: var(--surface-color-reverse);
-  box-shadow: var(--shadow-soft);
-  position: absolute;
-  right: 30px;
-  top: 30px;
-}
-
-.color-picker-panel .color-picker-inputs__hex {
-  background-color: var(--surface-color-reverse);
-  border-color: var(--border-color-dark);
-  color: var(--text-reverse);
-  border-radius: 4px;
-}
-
-.color-picker-panel__remove {
-  border-top: none;
-}
-
-.color-picker-panel__remove-button {
-  background-color: var(--button-dark);
-  border-radius: 4px;
-}
-
 @media screen and (max-width: 1000px) {
   body {
     background-color: var(--surface-color);
@@ -512,9 +512,9 @@ html[data-theme="dark"] .theme-toggle__button:hover {
   }
 
   .github-corner {
-    transform: scale(1, 1) !important;
-    right: 0 !important;
-    left: auto !important;
+    transform: scale(1, 1);
+    right: 0;
+    left: auto;
   }
 
   .page-footer {
@@ -549,7 +549,7 @@ html[data-theme="dark"] .theme-toggle__button:hover {
   .github-corner:hover .octo-arm {
     animation: none;
   }
-  
+
   .color-palette__color-weight-label {
     font-size: 13px;
   }
