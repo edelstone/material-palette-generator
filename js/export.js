@@ -1,7 +1,25 @@
 const modal = document.querySelector(".modal");
+const EXPORT_TYPE_STORAGE_KEY = 'mp-export-type';
+
+const getStoredExportType = () => {
+  try {
+    return localStorage.getItem(EXPORT_TYPE_STORAGE_KEY);
+  } catch (error) {
+    return null;
+  }
+};
+
+const storeExportType = (type) => {
+  try {
+    localStorage.setItem(EXPORT_TYPE_STORAGE_KEY, type);
+  } catch (error) {
+    // Ignore storage errors (private mode, etc.)
+  }
+};
 
 function ExportColor() {
   const exportType = document.querySelector('select#export-type')?.value;
+  if (exportType) storeExportType(exportType);
   const colorPalettes = document.querySelectorAll(".color-palette__row");
   const colorSelector = document.querySelectorAll(
     ".color-palette__cell-hex-value"
@@ -174,6 +192,15 @@ function convertJSONtoCSS(paletteJSON) {
 const closeButton = document.querySelector(".close");
 const contentArea = document.querySelector(".color-tool");
 const exportTypeSelect = document.querySelector('select#export-type');
+
+if (exportTypeSelect) {
+  const storedType = getStoredExportType();
+  const hasStoredType = storedType && exportTypeSelect.querySelector(`option[value="${storedType}"]`);
+
+  if (hasStoredType) {
+    exportTypeSelect.value = storedType;
+  }
+}
 
 contentArea.insertAdjacentHTML(
   "beforeend",
