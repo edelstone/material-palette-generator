@@ -38,6 +38,11 @@
       }
     })();
   </script>
+  <script>
+    // Prevent palette transitions on first paint until initial colors apply
+    document.documentElement.classList.add('no-palette-transition');
+    document.body && document.body.classList.add('no-palette-transition');
+  </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Material+Icons|Roboto+Mono">
   <link rel="stylesheet" href="/vendor/css/main.css">
   <link rel="stylesheet" href="/css/overrides.css">

@@ -34,6 +34,22 @@
 
   let lastPrimary = null;
   let lastSecondary = null;
+  let transitionsCleared = false;
+
+  const clearPaletteTransitionBlock = () => {
+    if (transitionsCleared) return;
+    transitionsCleared = true;
+    const removeClass = () => {
+      document.documentElement.classList.remove('no-palette-transition');
+      if (document.body) document.body.classList.remove('no-palette-transition');
+    };
+
+    if (typeof requestAnimationFrame === 'function') {
+      requestAnimationFrame(removeClass);
+    } else {
+      removeClass();
+    }
+  };
 
   const syncUrl = () => {
     const state = store.getState();
@@ -67,5 +83,9 @@
   };
 
   syncUrl();
-  store.subscribe(syncUrl);
+  clearPaletteTransitionBlock();
+  store.subscribe(() => {
+    syncUrl();
+    clearPaletteTransitionBlock();
+  });
 })();
