@@ -17,6 +17,7 @@ const FOCUSABLE_SELECTORS = 'button, [href], input, select, textarea, [tabindex]
 let lastFocusedElement = null;
 let isFocusTrapActive = false;
 let isModalOpen = false;
+let bodyScrollY = 0;
 
 const getStoredExportType = () => {
   try {
@@ -118,15 +119,21 @@ function openModal() {
   if (!modal || isModalOpen) return;
 
   lastFocusedElement = document.activeElement;
+  bodyScrollY = window.scrollY || window.pageYOffset || 0;
+  if (document && document.body) {
+    document.body.classList.add('modal-open');
+    document.body.style.top = `-${bodyScrollY}px`;
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+  }
   modal.style.display = "flex";
   modal.setAttribute('aria-modal', 'true');
   modal.setAttribute('role', 'dialog');
   focusActiveTab();
   activateFocusTrap();
   isModalOpen = true;
-  if (document && document.body) {
-    document.body.classList.add('modal-open');
-  }
 }
 
 function closeModal() {
@@ -138,6 +145,12 @@ function closeModal() {
   resetExportOutputScroll();
   if (document && document.body) {
     document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    window.scrollTo(0, bodyScrollY || 0);
   }
 
   if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
