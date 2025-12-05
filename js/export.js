@@ -30,7 +30,7 @@ const storeExportType = (type) => {
   try {
     localStorage.setItem(EXPORT_TYPE_STORAGE_KEY, type);
   } catch (error) {
-  // Ignore storage errors (private mode, etc.)
+    // Ignore storage errors (private mode, etc.)
   }
 };
 
@@ -135,6 +135,7 @@ function closeModal() {
   modal.style.display = "none";
   deactivateFocusTrap();
   isModalOpen = false;
+  resetExportOutputScroll();
   if (document && document.body) {
     document.body.classList.remove('modal-open');
   }
@@ -153,6 +154,7 @@ function ExportColor() {
   );
   const colors = [...colorSelector];
   const exportOutput = document.querySelector("#exportOutput");
+  if (!exportOutput) return;
   let exported = {};
 
   if (colorPalettes.length > 2) {
@@ -283,6 +285,8 @@ function ExportColor() {
       exportOutput.textContent = JSON.stringify(exported, null, "  ")
   }
 
+  resetExportOutputScroll();
+
   openModal();
 
 }
@@ -348,6 +352,21 @@ function selectExportOutput() {
   range.selectNodeContents(output);
   selection.removeAllRanges();
   selection.addRange(range);
+}
+
+function resetExportOutputScroll() {
+  const output = document.querySelector('#exportOutput');
+  if (!output) return;
+
+  output.scrollTop = 0;
+  output.scrollLeft = 0;
+
+  if (typeof requestAnimationFrame === 'function') {
+    requestAnimationFrame(() => {
+      output.scrollTop = 0;
+      output.scrollLeft = 0;
+    });
+  }
 }
 
 // Controls
