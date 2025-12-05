@@ -1,4 +1,5 @@
 const modal = document.querySelector(".modal");
+const exportOutput = document.querySelector('#exportOutput');
 const EXPORT_TYPE_STORAGE_KEY = 'mp-export-type';
 const COLOR_LABELS = [
   "900",
@@ -42,7 +43,6 @@ function getActiveExportType() {
 
 function setActiveExportType(type) {
   const firstTab = document.querySelector('.export-tab');
-  const exportOutput = document.querySelector('#exportOutput');
   const isFirstTab = firstTab && firstTab.dataset.exportType === type;
 
   document.querySelectorAll('.export-tab').forEach(tab => {
@@ -120,14 +120,12 @@ function openModal() {
 
   lastFocusedElement = document.activeElement;
   bodyScrollY = window.scrollY || window.pageYOffset || 0;
-  if (document && document.body) {
-    document.body.classList.add('modal-open');
-    document.body.style.top = `-${bodyScrollY}px`;
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.left = '0';
-    document.body.style.right = '0';
-  }
+  document.body.classList.add('modal-open');
+  document.body.style.top = `-${bodyScrollY}px`;
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
+  document.body.style.left = '0';
+  document.body.style.right = '0';
   modal.style.display = "flex";
   modal.setAttribute('aria-modal', 'true');
   modal.setAttribute('role', 'dialog');
@@ -149,15 +147,13 @@ function closeModal() {
   deactivateFocusTrap();
   isModalOpen = false;
   resetExportOutputScroll();
-  if (document && document.body) {
-    document.body.classList.remove('modal-open');
-    document.body.style.top = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    window.scrollTo(0, bodyScrollY || 0);
-  }
+  document.body.classList.remove('modal-open');
+  document.body.style.top = '';
+  document.body.style.position = '';
+  document.body.style.width = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  window.scrollTo(0, bodyScrollY || 0);
 
   if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
     lastFocusedElement.focus();
@@ -172,7 +168,6 @@ function ExportColor() {
     ".color-palette__cell-hex-value"
   );
   const colors = [...colorSelector];
-  const exportOutput = document.querySelector("#exportOutput");
   if (!exportOutput) return;
   let exported = {};
 
@@ -301,7 +296,7 @@ function ExportColor() {
       exportOutput.textContent = JSON.stringify(exported, null, "  ");
       break;
     default:
-      exportOutput.textContent = JSON.stringify(exported, null, "  ")
+      exportOutput.textContent = JSON.stringify(exported, null, "  ");
   }
 
   resetExportOutputScroll();
@@ -361,29 +356,27 @@ function convertJSONtoHexLists(paletteJSON, includeHash) {
 }
 
 function selectExportOutput() {
-  const output = document.querySelector('#exportOutput');
-  if (!output || typeof window === 'undefined' || !window.getSelection) return;
+  if (!exportOutput || typeof window === 'undefined' || !window.getSelection) return;
 
   const selection = window.getSelection();
   if (!selection) return;
 
   const range = document.createRange();
-  range.selectNodeContents(output);
+  range.selectNodeContents(exportOutput);
   selection.removeAllRanges();
   selection.addRange(range);
 }
 
 function resetExportOutputScroll() {
-  const output = document.querySelector('#exportOutput');
-  if (!output) return;
+  if (!exportOutput) return;
 
-  output.scrollTop = 0;
-  output.scrollLeft = 0;
+  exportOutput.scrollTop = 0;
+  exportOutput.scrollLeft = 0;
 
   if (typeof requestAnimationFrame === 'function') {
     requestAnimationFrame(() => {
-      output.scrollTop = 0;
-      output.scrollLeft = 0;
+      exportOutput.scrollTop = 0;
+      exportOutput.scrollLeft = 0;
     });
   }
 }
@@ -393,7 +386,6 @@ function resetExportOutputScroll() {
 const closeButton = document.querySelector(".close");
 const contentArea = document.querySelector(".color-tool");
 const exportTypeTabs = document.querySelectorAll('.export-tab');
-const exportOutputElement = document.querySelector('#exportOutput');
 
 if (exportTypeTabs.length) {
   const storedType = getStoredExportType();
@@ -454,9 +446,9 @@ if (exportTypeTabs.length) {
   });
 }
 
-if (exportOutputElement) {
-  exportOutputElement.addEventListener('click', selectExportOutput);
-  exportOutputElement.addEventListener('keydown', (event) => {
+if (exportOutput) {
+  exportOutput.addEventListener('click', selectExportOutput);
+  exportOutput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       selectExportOutput();
