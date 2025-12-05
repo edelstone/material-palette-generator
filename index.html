@@ -39,7 +39,7 @@
     })();
   </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Material+Icons|Roboto+Mono">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/vendor/css/main.css">
   <link rel="stylesheet" href="/css/overrides.css">
   <link rel="stylesheet" href="/css/carbon.css">
   <title>Material Design Palette Generator</title>
@@ -86,20 +86,21 @@
         <button class="close" type="reset"><i class="material-icons">highlight_off</i></button>
       </div>
       <div class="modal-control">
-        <label for="export-type">Type:</label>
-        <select name="type" id="export-type" onchange="ExportColor()">
-          <option value="css" selected>CSS</option>
-          <option value="json">JSON</option>
-        </select>
+        <div class="export-tabs" role="tablist" aria-label="Export type">
+          <button class="export-tab is-active" type="button" role="tab" aria-selected="true" data-export-type="css">CSS</button>
+          <button class="export-tab" type="button" role="tab" aria-selected="false" data-export-type="json">JSON</button>
+          <button class="export-tab" type="button" role="tab" aria-selected="false" data-export-type="hex">Hex</button>
+          <button class="export-tab" type="button" role="tab" aria-selected="false" data-export-type="hex-with-hash">Hex with #</button>
+        </div>
       </div>
       <div class="modal-text">
-        <textarea name="exportedPalettes" onclick="this.select()" readonly id="jsonText"></textarea>
+        <pre id="exportOutput" class="export-output" tabindex="0" aria-label="Exported palette" aria-readonly="true"></pre>
       </div>
     </div>
   </dialog>
 
   <script src="/js/theme-toggle.js" defer></script>
-  <script src="/js/main.js" defer></script>
+  <script src="/vendor/js/main.js" defer></script>
   <script src="/js/export.js" defer></script>
   <script src="/js/url-sync.js" defer></script>
   <script>

@@ -1,5 +1,22 @@
 const modal = document.querySelector(".modal");
 const EXPORT_TYPE_STORAGE_KEY = 'mp-export-type';
+const COLOR_LABELS = [
+  "900",
+  "800",
+  "700",
+  "600",
+  "500",
+  "400",
+  "300",
+  "200",
+  "100",
+  "50",
+];
+const FOCUSABLE_SELECTORS = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+let lastFocusedElement = null;
+let isFocusTrapActive = false;
+let isModalOpen = false;
 
 const getStoredExportType = () => {
   try {
@@ -13,31 +30,129 @@ const storeExportType = (type) => {
   try {
     localStorage.setItem(EXPORT_TYPE_STORAGE_KEY, type);
   } catch (error) {
-    // Ignore storage errors (private mode, etc.)
+  // Ignore storage errors (private mode, etc.)
   }
 };
 
+function getActiveExportType() {
+  const activeTab = document.querySelector('.export-tab.is-active');
+  return activeTab?.dataset.exportType || 'css';
+}
+
+function setActiveExportType(type) {
+  const firstTab = document.querySelector('.export-tab');
+  const exportOutput = document.querySelector('#exportOutput');
+  const isFirstTab = firstTab && firstTab.dataset.exportType === type;
+
+  document.querySelectorAll('.export-tab').forEach(tab => {
+    const isActive = tab.dataset.exportType === type;
+    tab.classList.toggle('is-active', isActive);
+    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    tab.tabIndex = isActive ? 0 : -1;
+  });
+
+  if (exportOutput) {
+    exportOutput.classList.toggle('is-rounded', !isFirstTab);
+  }
+}
+
+function getFocusableElements() {
+  if (!modal) return [];
+
+  return [...modal.querySelectorAll(FOCUSABLE_SELECTORS)].filter(
+    (el) =>
+      !el.hasAttribute('disabled') &&
+      el.tabIndex !== -1 &&
+      el.offsetParent !== null
+  );
+}
+
+const handleFocusTrapKeydown = (event) => {
+  if (event.key !== 'Tab') return;
+
+  const focusable = getFocusableElements();
+  if (!focusable.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey) {
+    if (document.activeElement === first || !modal.contains(document.activeElement)) {
+      event.preventDefault();
+      last.focus();
+    }
+  } else {
+    if (document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+};
+
+function activateFocusTrap() {
+  if (!modal || isFocusTrapActive) return;
+
+  modal.addEventListener('keydown', handleFocusTrapKeydown);
+  isFocusTrapActive = true;
+}
+
+function deactivateFocusTrap() {
+  if (!modal || !isFocusTrapActive) return;
+
+  modal.removeEventListener('keydown', handleFocusTrapKeydown);
+  isFocusTrapActive = false;
+}
+
+function focusActiveTab() {
+  const activeTab = document.querySelector('.export-tab.is-active');
+  if (activeTab) {
+    activeTab.focus();
+    return;
+  }
+
+  const focusable = getFocusableElements();
+  if (focusable[0]) focusable[0].focus();
+}
+
+function openModal() {
+  if (!modal || isModalOpen) return;
+
+  lastFocusedElement = document.activeElement;
+  modal.style.display = "flex";
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('role', 'dialog');
+  focusActiveTab();
+  activateFocusTrap();
+  isModalOpen = true;
+  if (document && document.body) {
+    document.body.classList.add('modal-open');
+  }
+}
+
+function closeModal() {
+  if (!modal || !isModalOpen) return;
+
+  modal.style.display = "none";
+  deactivateFocusTrap();
+  isModalOpen = false;
+  if (document && document.body) {
+    document.body.classList.remove('modal-open');
+  }
+
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    lastFocusedElement.focus();
+  }
+}
+
 function ExportColor() {
-  const exportType = document.querySelector('select#export-type')?.value;
+  const exportType = getActiveExportType();
   if (exportType) storeExportType(exportType);
   const colorPalettes = document.querySelectorAll(".color-palette__row");
   const colorSelector = document.querySelectorAll(
     ".color-palette__cell-hex-value"
   );
   const colors = [...colorSelector];
-  const textArea = document.querySelector("#jsonText");
-  const COLOR_LABELS = [
-    "900",
-    "800",
-    "700",
-    "600",
-    "500",
-    "400",
-    "300",
-    "200",
-    "100",
-    "50",
-  ];
+  const exportOutput = document.querySelector("#exportOutput");
   let exported = {};
 
   if (colorPalettes.length > 2) {
@@ -153,16 +268,22 @@ function ExportColor() {
 
   switch (exportType) {
     case 'css':
-      textArea.textContent = convertJSONtoCSS(exported);
+      exportOutput.textContent = convertJSONtoCSS(exported);
+      break;
+    case 'hex':
+      exportOutput.textContent = convertJSONtoHexLists(exported, false);
+      break;
+    case 'hex-with-hash':
+      exportOutput.textContent = convertJSONtoHexLists(exported, true);
       break;
     case 'json':
-      textArea.textContent = JSON.stringify(exported, null, "  ");
+      exportOutput.textContent = JSON.stringify(exported, null, "  ");
       break;
     default:
-      textArea.textContent = JSON.stringify(exported, null, "  ")
+      exportOutput.textContent = JSON.stringify(exported, null, "  ")
   }
 
-  modal.style.display = "flex";
+  openModal();
 
 }
 
@@ -187,19 +308,122 @@ function convertJSONtoCSS(paletteJSON) {
   return `:root {\n  ${paletteCSS.join('\n  ')}\n}`;
 }
 
+function normalizeHexValue(hexValue, includeHash) {
+  const trimmedHex = hexValue.trim();
+  if (includeHash) {
+    return trimmedHex.startsWith('#') ? trimmedHex : `#${trimmedHex}`;
+  }
+
+  return trimmedHex.replace(/^#/, '');
+}
+
+function convertJSONtoHexLists(paletteJSON, includeHash) {
+  const paletteHexes = [];
+  const paletteNames = Object.keys(paletteJSON);
+  const shadeOrder = [...COLOR_LABELS].reverse();
+
+  paletteNames.forEach((paletteName, paletteIndex) => {
+    const shades = shadeOrder.map(label => paletteJSON[paletteName]?.[label]).filter(Boolean);
+
+    shades.forEach(hexValue => {
+      paletteHexes.push(normalizeHexValue(hexValue, includeHash));
+    });
+
+    if (paletteIndex !== paletteNames.length - 1) {
+      paletteHexes.push('');
+    }
+  });
+
+  return paletteHexes.join('\n');
+}
+
+function selectExportOutput() {
+  const output = document.querySelector('#exportOutput');
+  if (!output || typeof window === 'undefined' || !window.getSelection) return;
+
+  const selection = window.getSelection();
+  if (!selection) return;
+
+  const range = document.createRange();
+  range.selectNodeContents(output);
+  selection.removeAllRanges();
+  selection.addRange(range);
+}
+
 // Controls
 
 const closeButton = document.querySelector(".close");
 const contentArea = document.querySelector(".color-tool");
-const exportTypeSelect = document.querySelector('select#export-type');
+const exportTypeTabs = document.querySelectorAll('.export-tab');
+const exportOutputElement = document.querySelector('#exportOutput');
 
-if (exportTypeSelect) {
+if (exportTypeTabs.length) {
   const storedType = getStoredExportType();
-  const hasStoredType = storedType && exportTypeSelect.querySelector(`option[value="${storedType}"]`);
+  const hasStoredType = storedType && [...exportTypeTabs].some(tab => tab.dataset.exportType === storedType);
+  const defaultType = exportTypeTabs[0].dataset.exportType;
 
-  if (hasStoredType) {
-    exportTypeSelect.value = storedType;
-  }
+  setActiveExportType(hasStoredType ? storedType : defaultType);
+
+  exportTypeTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const type = tab.dataset.exportType;
+      setActiveExportType(type);
+      storeExportType(type);
+      ExportColor();
+    });
+
+    tab.addEventListener('keydown', (event) => {
+      const key = event.key;
+      const tabs = [...exportTypeTabs];
+      const currentIndex = tabs.indexOf(tab);
+
+      if (['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp'].includes(key)) {
+        event.preventDefault();
+        const direction = key === 'ArrowRight' || key === 'ArrowDown' ? 1 : -1;
+        const nextTab = tabs[(currentIndex + direction + tabs.length) % tabs.length];
+        const type = nextTab.dataset.exportType;
+        setActiveExportType(type);
+        storeExportType(type);
+        ExportColor();
+        nextTab.focus();
+      }
+
+      if (key === 'Home') {
+        event.preventDefault();
+        const firstTab = tabs[0];
+        const type = firstTab.dataset.exportType;
+        setActiveExportType(type);
+        storeExportType(type);
+        ExportColor();
+        firstTab.focus();
+      }
+
+      if (key === 'End') {
+        event.preventDefault();
+        const lastTab = tabs[tabs.length - 1];
+        const type = lastTab.dataset.exportType;
+        setActiveExportType(type);
+        storeExportType(type);
+        ExportColor();
+        lastTab.focus();
+      }
+
+      if (key === 'Enter' || key === ' ') {
+        event.preventDefault();
+        tab.click();
+      }
+    });
+  });
+}
+
+if (exportOutputElement) {
+  exportOutputElement.addEventListener('click', selectExportOutput);
+  exportOutputElement.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      selectExportOutput();
+    }
+  });
 }
 
 contentArea.insertAdjacentHTML(
@@ -211,12 +435,18 @@ contentArea.insertAdjacentHTML(
 
 // When the user clicks on <button> (x), close the modal
 closeButton.onclick = function () {
-  modal.style.display = "none";
+  closeModal();
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    closeModal();
   }
 };
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});

@@ -269,6 +269,10 @@ html[data-theme="dark"] .clipboard-confirmation {
   justify-content: center;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .modal-content {
   padding: 20px;
   width: min(90vw, 600px);
@@ -278,6 +282,8 @@ html[data-theme="dark"] .clipboard-confirmation {
   background-color: var(--accent-color);
   box-shadow: var(--shadow-soft);
   color: var(--text-primary);
+  max-height: min(600px, calc(100vh - 30px));
+  overflow: hidden;
 }
 
 .modal-header {
@@ -285,12 +291,33 @@ html[data-theme="dark"] .clipboard-confirmation {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  height: 40px;
   color: var(--text-primary);
 }
 
-.modal-control {
-  margin-bottom: 10px;
+.export-tabs {
+  display: flex;
+  position: relative;
+  top: 1px;
+}
+
+.export-tab {
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--font-body);
+  opacity: 0.7;
+}
+
+.export-tab.is-active {
+  background-color: var(--surface-color);
+  border-color: var(--border-color);
+  opacity: 1;
 }
 
 .modal-header h2 {
@@ -318,30 +345,28 @@ html[data-theme="dark"] .clipboard-confirmation {
   font-size: 36px;
 }
 
-.modal-control select {
-  background-color: var(--surface-color);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 4px 2px;
-}
-
-.modal-content textarea {
+.modal-content .export-output {
   font-family: var(--font-mono);
-  resize: none;
   width: 100%;
-  height: 60vh;
+  margin: 0;
   font-size: 16px;
   line-height: 1.4;
-  border-color: var(--border-color);
-  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 0 4px 4px;
   color: var(--text-primary);
   padding: 10px;
   background-color: var(--surface-color);
+  white-space: pre-wrap;
+  overflow: auto;
 }
 
-html[data-theme="dark"] .modal-content textarea {
-  border-color: var(--surface-color);
+.modal-text {
+  min-height: 0;
+  display: flex;
+}
+
+.modal-content .export-output.is-rounded {
+  border-radius: 4px;
 }
 
 .buttonContainer {
@@ -524,27 +549,22 @@ html[data-theme="dark"] .theme-toggle__button:hover {
   .github-corner:hover .octo-arm {
     animation: none;
   }
-
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-
+  
   .color-palette__color-weight-label {
     font-size: 13px;
   }
 
   .modal-content {
-    margin-top: 0;
-    height: 100%;
+    width: 100%;
+    max-height: 100%;
   }
 
-  .modal-content textarea {
-    height: 100%;
+  .modal-content .export-output {
     font-size: 14px;
   }
 
-  .modal-text {
-    height: calc(100% - 60px);
+  .export-tab {
+    font-size: 14px;
   }
 
   .theme-toggle {
