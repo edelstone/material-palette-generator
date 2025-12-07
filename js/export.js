@@ -13,6 +13,8 @@ const COLOR_LABELS = [
   "100",
   "50",
 ];
+const COLORS_PER_PALETTE = 10;
+const DEFAULT_BASE_SHADE = '500';
 const FOCUSABLE_SELECTORS = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
 let lastFocusedElement = null;
@@ -164,123 +166,44 @@ function ExportColor() {
   const exportType = getActiveExportType();
   if (exportType) storeExportType(exportType);
   const colorPalettes = document.querySelectorAll(".color-palette__row");
-  const colorSelector = document.querySelectorAll(
-    ".color-palette__cell-hex-value"
-  );
-  const colors = [...colorSelector];
+  const colors = [...document.querySelectorAll(".color-palette__cell-hex-value")];
   if (!exportOutput) return;
-  let exported = {};
 
-  if (colorPalettes.length > 2) {
+  const buildPaletteExportData = (paletteIndex) => {
+    const paletteRow = colorPalettes[paletteIndex];
+    const paletteColors = colors.slice(
+      paletteIndex * COLORS_PER_PALETTE,
+      (paletteIndex + 1) * COLORS_PER_PALETTE
+    );
+
+    if (!paletteColors.length) return { base: DEFAULT_BASE_SHADE };
+
     let labelIndex = 0;
-    colorPalettes.forEach((palette, paletteIndex) => {
-      if (paletteIndex === 0) {
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex < 10
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Primary"] = {
-            ...exported["Primary"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      }
-      if (paletteIndex === 1) {
-        let labelIndex = 0;
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex >= 10 && colorIndex < 20
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Complementary"] = {
-            ...exported["Complementary"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      }
-      if (paletteIndex === 2) {
-        let labelIndex = 0;
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex >= 20 && colorIndex < 30
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Analogous - 1"] = {
-            ...exported["Analogous - 1"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      }
-      if (paletteIndex === 3) {
-        let labelIndex = 0;
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex >= 30 && colorIndex < 40
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Analogous - 2"] = {
-            ...exported["Analogous - 2"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      }
-      if (paletteIndex === 4) {
-        let labelIndex = 0;
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex >= 40 && colorIndex < 50
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Triadic - 1"] = {
-            ...exported["Triadic - 1"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      }
-      if (paletteIndex === 5) {
-        let labelIndex = 0;
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex >= 50
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Triadic - 2"] = {
-            ...exported["Triadic - 2"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      }
+    const paletteData = {};
+
+    paletteColors.forEach((hexElement) => {
+      const shadeLabel = COLOR_LABELS[labelIndex];
+      paletteData[shadeLabel] = normalizeHexForExport(hexElement.textContent);
+      labelIndex++;
     });
-  } else {
-    colorPalettes.forEach((palette, paletteIndex) => {
-      if (paletteIndex === 0) {
-        let labelIndex = 0;
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex < 10
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Primary"] = {
-            ...exported["Primary"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      } else {
-        let labelIndex = 0;
-        const filteredColors = colors.filter(
-          (color, colorIndex) => colorIndex >= 10
-        );
-        filteredColors.forEach((hex, hexIndex) => {
-          exported["Secondary"] = {
-            ...exported["Secondary"],
-            [COLOR_LABELS[labelIndex]]: hex.textContent,
-          };
-          labelIndex++;
-        });
-      }
-    });
-  }
+
+    const selectedHex = getSelectedHexFromRow(paletteRow);
+    const baseShade = findBaseShadeLabel(paletteData, selectedHex) || DEFAULT_BASE_SHADE;
+
+    paletteData.base = baseShade;
+
+    return paletteData;
+  };
+
+  const paletteKeys = (colorPalettes.length > 2
+    ? ['primary', 'complementary', 'analogous-1', 'analogous-2', 'triadic-1', 'triadic-2']
+    : ['primary', 'secondary']).slice(0, colorPalettes.length);
+
+  const exported = {};
+
+  paletteKeys.forEach((paletteKey, paletteIndex) => {
+    exported[paletteKey] = buildPaletteExportData(paletteIndex);
+  });
 
   switch (exportType) {
     case 'css':
@@ -310,17 +233,23 @@ function convertJSONtoCSS(paletteJSON) {
   const mainColors = [];
 
   [...document.querySelectorAll('.color-palette__cell--selected')].forEach(mainColorElement => {
-    mainColors.push(mainColorElement.querySelector('.color-palette__cell-hex-value').textContent)
+    const hexValue = mainColorElement.querySelector('.color-palette__cell-hex-value')?.textContent;
+    if (hexValue) {
+      mainColors.push(normalizeHexForExport(hexValue));
+    }
   });
 
   for (const color in paletteJSON) {
     const colorName = color.replace(/ /g, '').toLowerCase();
-    Object.entries(paletteJSON[color]).forEach(colorShade => {
-      paletteCSS.push(`--clr-${colorName}-${colorShade[0]}: ${colorShade[1]};`);
-      if (mainColors.includes(colorShade[1])) {
-        paletteCSS.push(`--clr-${colorName}: var(--clr-${colorName}-${colorShade[0]});`);
-      }
-    });
+    Object.entries(paletteJSON[color])
+      .filter(([shade]) => COLOR_LABELS.includes(shade))
+      .forEach(([shade, hexValue]) => {
+        const normalizedHex = normalizeHexForExport(hexValue);
+        paletteCSS.push(`--clr-${colorName}-${shade}: ${normalizedHex};`);
+        if (mainColors.includes(normalizedHex)) {
+          paletteCSS.push(`--clr-${colorName}: var(--clr-${colorName}-${shade});`);
+        }
+      });
   }
 
   return `:root {\n  ${paletteCSS.join('\n  ')}\n}`;
@@ -335,16 +264,54 @@ function normalizeHexValue(hexValue, includeHash) {
   return trimmedHex.replace(/^#/, '');
 }
 
+function normalizeHexForExport(hexValue) {
+  return normalizeHexValue(hexValue, true).toLowerCase();
+}
+
+function getSelectedHexFromRow(paletteRow) {
+  if (!paletteRow) return null;
+
+  const selectedHexElement = paletteRow.querySelector('.color-palette__cell--selected .color-palette__cell-hex-value');
+  return selectedHexElement ? normalizeHexForExport(selectedHexElement.textContent) : null;
+}
+
+function findBaseShadeLabel(paletteData, selectedHex) {
+  if (!selectedHex) return null;
+
+  return COLOR_LABELS.find(label => {
+    const hexValue = paletteData[label];
+    if (!hexValue) return false;
+
+    return normalizeHexForExport(hexValue) === normalizeHexForExport(selectedHex);
+  }) || null;
+}
+
+function formatPaletteTitle(paletteName) {
+  return paletteName
+    .split('-')
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' - ');
+}
+
 function convertJSONtoHexLists(paletteJSON, includeHash) {
   const paletteHexes = [];
   const paletteNames = Object.keys(paletteJSON);
   const shadeOrder = [...COLOR_LABELS].reverse();
 
   paletteNames.forEach((paletteName, paletteIndex) => {
-    const shades = shadeOrder.map(label => paletteJSON[paletteName]?.[label]).filter(Boolean);
+    paletteHexes.push(formatPaletteTitle(paletteName));
+    paletteHexes.push('-----');
 
-    shades.forEach(hexValue => {
-      paletteHexes.push(normalizeHexValue(hexValue, includeHash));
+    const shades = shadeOrder
+      .map(label => ({
+        label,
+        hex: paletteJSON[paletteName]?.[label]
+      }))
+      .filter(shade => Boolean(shade.hex));
+
+    shades.forEach(({ hex }) => {
+      const normalizedHex = normalizeHexValue(hex, includeHash);
+      paletteHexes.push(normalizedHex);
     });
 
     if (paletteIndex !== paletteNames.length - 1) {
