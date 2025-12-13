@@ -33,24 +33,6 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-@keyframes octocat-wave {
-
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
-}
-
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
@@ -77,10 +59,12 @@ img {
   border: 0;
   left: 0;
   transform: scale(-1, 1);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  outline-offset: -1px;
 }
 
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
+.github-corner:focus-visible {
+  clip-path: none;
 }
 
 .color-tool {
@@ -566,10 +550,6 @@ html[data-theme="dark"] .theme-toggle__button:hover {
 
   .page-footer {
     padding-left: 10px;
-  }
-
-  .github-corner:hover .octo-arm {
-    animation: none;
   }
 
   .color-palette__color-weight-label {
