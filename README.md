@@ -1,4 +1,4 @@
-# [<img src="icon.svg" width="28px" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
+# [<img src="icon.svg" width="28px" alt="" />](https://materialpalettes.com) &nbsp;[Material Design Palette Generator](https://materialpalettes.com)
 
 <a href="https://materialpalettes.com">
  <picture>
@@ -38,6 +38,7 @@ To make it a little easier to access and to preserve it for my own future use, I
 - **VS Code:** Visual Studio Code users can take advantage of the [Material Design Palette Generator plugin](https://marketplace.visualstudio.com/items?itemName=piyush-bhatt.vscode-mat-palette), inspired by and based on this project.
 
 ## Support this project
+
 This tool will always be free but your support is greatly appreciated.
 
 - [Buy Me a Coffee](https://www.buymeacoffee.com/edelstone)
@@ -46,6 +47,7 @@ This tool will always be free but your support is greatly appreciated.
 - [Venmo](https://venmo.com/michaeledelstone)
 
 ## Feedback and contributing
+
 If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:contact@materialpalettes.com) the details.
 
 If you're a developer and want to help with the project, please comment on [open issues](https://github.com/edelstone/material-palette-generator/issues) or create a new one. Once we agree on a path forward you can just make a pull request and take it to the finish line.
