@@ -39,8 +39,6 @@ To make it a little easier to access and to preserve it for my own future use, I
 
 ## Support this project
 
-This tool will always be free but your support is greatly appreciated.
-
 - [Buy Me a Coffee](https://www.buymeacoffee.com/edelstone)
 - [Cash App](https://cash.app/$edelstone)
 - [Paypal](https://www.paypal.me/edelstone)
@@ -50,7 +48,7 @@ This tool will always be free but your support is greatly appreciated.
 
 If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:contact@materialpalettes.com) the details.
 
-If you're a developer and want to help with the project, please comment on [open issues](https://github.com/edelstone/material-palette-generator/issues) or create a new one. Once we agree on a path forward you can just make a pull request and take it to the finish line.
+If you’d like to contribute, comment on an [open issue](https://github.com/edelstone/material-palette-generator/issues) or open a new one describing your approach. Once aligned, submit a PR.
 
 ## Credits
 
