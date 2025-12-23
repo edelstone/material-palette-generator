@@ -24,11 +24,11 @@ This is a (slightly modified) clone of the [official Material Design palette gen
 1. Provides you with complementary colors based off your primary color
 1. Allows you to export the palettes as JSON or CSS variables
 
-Both are based on Material Design standards, and use Google's algorithm for color derivation.
+Both are based on Material Design standards, and use Google&rsquo;s algorithm for color derivation.
 
 ## Why is this?
 
-Google's official palette generator [is embedded and buried deep within the Material docs](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). Since it's an inline tool, it's also hidden from search engines, making it difficult to discover or bookmark.
+Google&rsquo;s official palette generator [is embedded and buried deep within the Material docs](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). Since it&rsquo;s an inline tool, it&rsquo;s also hidden from search engines, making it difficult to discover or bookmark.
 
 To make it a little easier to access and to preserve it for my own future use, I grabbed the obfuscated code (the original scripts do not appear to be public anywhere) and added some small interface improvements. I did _not_ change the way colors are derived.
 
@@ -46,15 +46,15 @@ To make it a little easier to access and to preserve it for my own future use, I
 
 ## Feedback and contributing
 
-If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new). You can also just [email me](mailto:contact@materialpalettes.com) the details.
+If you notice a problem or want a feature added please [file an issue on GitHub](https://github.com/edelstone/material-palette-generator/issues/new) or just [email me](mailto:contact@materialpalettes.com) the details.
 
-If you’d like to contribute, comment on an [open issue](https://github.com/edelstone/material-palette-generator/issues) or open a new one describing your approach. Once aligned, submit a PR.
+If you&rsquo;d like to contribute, comment on an [open issue](https://github.com/edelstone/material-palette-generator/issues) or open a new one describing your approach. Once aligned, submit a PR.
 
 ## Credits
 
-- Hi, I'm [Michael Edelstone](https://michaeledelstone.com). You might also be interested in the [Tint & Shade Generator](https://maketintsandshades.com), another useful color tool I made.
+- Hi, I&rsquo;m [Michael Edelstone](https://michaeledelstone.com). You might also be interested in the [Tint & Shade Generator](https://maketintsandshades.com), another useful color tool I made.
 - Most of this is copyright Google Inc. If you do anything with their code, please maintain the licenses they indicate at the top of the large files.
 - You can use any of my modifications without credit, except...
 - Favicon image courtesy of [Roundicons](https://roundicons.com/) and pulled from [flaticon.com](https://flaticon.com). If you reuse it, please continue to credit the creator.
 
-Many thanks to [Ziya Fenn](https://github.com/ziyafenn) and [Mateusz Skórka](https://github.com/HotFr1dge) for their valuable contributions to this project.
+Many thanks to [Ziya Fenn](https://github.com/ziyafenn) and [Mateusz Sk&oacute;rka](https://github.com/HotFr1dge) for their valuable contributions to this project.
