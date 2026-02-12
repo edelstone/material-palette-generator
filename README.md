@@ -1,16 +1,20 @@
 # [Material Design Palette Generator](https://materialpalettes.com)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/home-dark.png" />
-  <source media="(prefers-color-scheme: light)" srcset="images/home-light.png" />
-  <img alt="Screenshot of app home page" src="assets/home-light.png" />
-</picture>
+<a href="https://materialpalettes.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="images/home-dark.png" />
+    <source media="(prefers-color-scheme: light)" srcset="images/home-light.png" />
+    <img alt="Screenshot of app home page" src="assets/home-light.png" />
+  </picture>
+</a>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/export-dark.png" />
-  <source media="(prefers-color-scheme: light)" srcset="images/export-light.png" />
-  <img alt="Screenshot of app home page" src="assets/export-light.png" />
-</picture>
+<a href="https://materialpalettes.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="images/export-dark.png" />
+    <source media="(prefers-color-scheme: light)" srcset="images/export-light.png" />
+    <img alt="Screenshot of app home page" src="assets/export-light.png" />
+  </picture>
+</a>
 
 ## What is this?
 
