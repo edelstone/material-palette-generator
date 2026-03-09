@@ -22,7 +22,7 @@ This is a (slightly modified) clone of the [official Material Design palette gen
 
 1. Builds you a full color palette from a given hex color
 1. Provides you with complementary colors based off your primary color
-1. Allows you to export the palettes as JSON or CSS variables
+1. Allows you to export palettes as CSS variables, JSON, or hex (with or without #)
 
 Both are based on Material Design standards, and use Google’s algorithm for color derivation.
 
