@@ -51,6 +51,10 @@ img {
   border-radius: 4px;
 }
 
+button {
+  font-family: var(--font-body);
+}
+
 .material-icons {
   font-family: 'Material Symbols Rounded';
   font-weight: normal;
@@ -173,6 +177,7 @@ img {
 .color-palette__color-weight-label {
   max-width: 64px;
   color: var(--text-subtle);
+  font-family: var(--font-mono);
 }
 
 .color-palette__label {
@@ -194,6 +199,7 @@ img {
 
 .utility-panel__large-letter {
   margin-top: 4px;
+  font-weight: 700;
 }
 
 .utility-panel .content__info {
@@ -243,8 +249,8 @@ img {
   font-family: var(--font-body);
 }
 
-.color-palette__color-weight-label {
-  font-family: var(--font-mono);
+.color-palette__cell {
+  font-weight: 700;
 }
 
 .color-palette__cell-hex-value {
@@ -478,7 +484,7 @@ html[data-theme="dark"] .exportButton:hover {
 }
 
 .exportButton i {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .theme-toggle {
@@ -493,8 +499,8 @@ html[data-theme="dark"] .exportButton:hover {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 12px;
-  min-width: 130px;
+  padding: 10px 14px;
+  min-width: 140px;
   border-radius: 999px;
   border: 1px solid var(--border-color);
   background-color: var(--surface-color);
