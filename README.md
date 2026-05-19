@@ -32,11 +32,6 @@ Google’s official palette generator [is embedded and buried deep within the Ma
 
 To make it a little easier to access and to preserve it for my own future use, I grabbed the obfuscated code (the original scripts do not appear to be public anywhere) and added some small interface improvements. I did _not_ change the way colors are derived.
 
-## Plugins
-
-- **Sketch:** After creating palettes and exporting the JSON data, Sketch users can create shared layer styles easily with the [Sketch JSON Color Palette Importer](https://github.com/ziyafenn/sketch-json-color-palette-importer) plugin.
-- **VS Code:** Visual Studio Code users can take advantage of the [Material Design Palette Generator plugin](https://marketplace.visualstudio.com/items?itemName=piyush-bhatt.vscode-mat-palette), inspired by and based on this project.
-
 ## Support this project
 
 - [Buy Me a Coffee](https://www.buymeacoffee.com/edelstone)
