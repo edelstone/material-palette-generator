@@ -17,8 +17,8 @@ Local overrides so Google's original stylesheet (main.css) can remain unedited.
   --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.5);
   --transition-speed: 160ms;
   --transition-curve: ease;
-  --font-body: "Roboto", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "Roboto Mono", "SFMono-Regular", ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, "Liberation Mono", monospace;
+  --font-body: "Google Sans Flex", sans-serif;
+  --font-mono: "Google Sans Code", monospace;
   color-scheme: light;
 }
 
@@ -51,6 +51,21 @@ img {
   border-radius: 4px;
 }
 
+.material-icons {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
 .github-corner {
   fill: var(--surface-color-reverse);
   color: var(--text-reverse);
@@ -72,6 +87,11 @@ img {
   padding: 140px 40px 60px;
   background-color: var(--surface-color);
   transition: background-color var(--transition-speed) var(--transition-curve);
+}
+
+.color-tool,
+.mobile-message {
+  font-family: var(--font-body);
 }
 
 .tool-title {
@@ -172,6 +192,10 @@ img {
   border-color: var(--border-color-dark);
 }
 
+.utility-panel__large-letter {
+  margin-top: 4px;
+}
+
 .utility-panel .content__info {
   display: none;
 }
@@ -198,6 +222,7 @@ img {
   border-color: var(--border-color-dark);
   color: var(--text-reverse);
   border-radius: 4px;
+  font-family: var(--font-mono);
 }
 
 .color-picker-panel__remove {
@@ -207,6 +232,15 @@ img {
 .color-picker-panel__remove-button {
   background-color: var(--button-dark);
   border-radius: 4px;
+  height: 34px;
+}
+
+.color-picker-panel__remove-button i {
+  font-size: 16px;
+}
+
+.color-picker-panel__remove-button span {
+  font-family: var(--font-body);
 }
 
 .color-palette__color-weight-label {
@@ -219,6 +253,9 @@ img {
   background-color: var(--surface-color-reverse);
   color: var(--text-reverse);
   border-radius: 4px;
+  font-family: var(--font-body);
+  width: 54px;
+  line-height: 23px;
 }
 
 .clipboard-confirmation {
@@ -227,12 +264,13 @@ img {
   height: auto;
   padding: 5px 25px;
   text-align: center;
-  width: 220px;
+  width: 225px;
   background-color: var(--surface-color-reverse);
   color: var(--text-reverse);
   position: fixed;
   z-index: 9999;
   pointer-events: none;
+  font-family: var(--font-body);
 }
 
 html[data-theme="dark"] .color-palette__cell-hex-value,
@@ -341,6 +379,14 @@ html.no-palette-transition .color-palette__cell {
   font-size: 16px;
   font-family: var(--font-body);
   opacity: 0.7;
+}
+
+.export-tab:hover {
+  opacity: 0.8;
+}
+
+.export-tab:active {
+  opacity: 0.9;
 }
 
 .export-tab.is-active {
@@ -483,6 +529,7 @@ html[data-theme="dark"] .theme-toggle__button:hover {
   .color-tool {
     display: block;
     padding: 165px 20px 60px;
+    font-family: var(--font-body);
   }
 
   .page-content {

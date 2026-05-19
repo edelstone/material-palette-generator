@@ -426,7 +426,7 @@ if (exportOutput) {
 contentArea.insertAdjacentHTML(
   "beforeend",
   `
-<div class="buttonContainer"><button class="exportButton" onclick="ExportColor()"><i class="material-icons" aria-hidden="true">file_download</i><span>Export palette</span></button></div>
+<div class="buttonContainer"><button class="exportButton" onclick="ExportColor()"><i class="material-symbols-rounded" aria-hidden="true">download</i><span>Export palette</span></button></div>
 `
 );
 

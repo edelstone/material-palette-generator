@@ -3,7 +3,7 @@
   const toggleButton = document.querySelector('[data-theme-toggle]');
   if (!toggleButton) return;
 
-  const icon = toggleButton.querySelector('.material-icons');
+  const icon = toggleButton.querySelector('.material-symbols-rounded');
   const label = toggleButton.querySelector('.theme-toggle__label');
   const storageKey = 'mp-theme';
 

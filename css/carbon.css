@@ -57,13 +57,11 @@ html[data-theme="dark"] #carbonads {
   bottom: 12px;
   display: block;
   padding: 0;
-  border-radius: 2.5px;
   background: none;
   color: var(--text-subtle);
   text-transform: uppercase;
-  letter-spacing: .5px;
-  font-weight: 700;
-  font-size: 8px;
+  font-weight: 500;
+  font-size: 9px;
   line-height: 1;
 }
 
@@ -82,7 +80,7 @@ html[data-theme="dark"] #carbonads {
   .mp-ad {
     left: 0;
     top: 0;
-    max-width: 360px;
+    max-width: 400px;
     min-height: 120px;
     position: relative;
     margin-top: 15px;
@@ -108,7 +106,7 @@ html[data-theme="dark"] #carbonads {
 
   .carbon-text {
     text-align: left;
-    font-size: 14px;
+    font-size: 13px;
     margin: 0;
   }
 }
