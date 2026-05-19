@@ -455,17 +455,15 @@ html.no-palette-transition .color-palette__cell {
   margin-top: 50px;
 }
 
-.exportButton {
-  padding: 16px 24px;
+.exportButton,
+.theme-toggle__button {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   background-color: var(--surface-color);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
   border-radius: 999px;
-  font-size: 16px;
   font-weight: 700;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -473,13 +471,23 @@ html.no-palette-transition .color-palette__cell {
   transition: background-color var(--transition-speed) var(--transition-curve), color var(--transition-speed) var(--transition-curve), border-color var(--transition-speed) var(--transition-curve);
 }
 
+.exportButton {
+  padding: 16px 24px;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.exportButton:hover,
 .exportButton:active,
-.exportButton:hover {
+.theme-toggle__button:hover,
+.theme-toggle__button:active {
   background-color: var(--accent-color-light);
 }
 
+html[data-theme="dark"] .exportButton:hover,
 html[data-theme="dark"] .exportButton:active,
-html[data-theme="dark"] .exportButton:hover {
+html[data-theme="dark"] .theme-toggle__button:hover,
+html[data-theme="dark"] .theme-toggle__button:active {
   background-color: var(--accent-color);
 }
 
@@ -495,36 +503,17 @@ html[data-theme="dark"] .exportButton:hover {
 }
 
 .theme-toggle__button {
-  display: inline-flex;
-  align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px 14px;
   min-width: 140px;
-  border-radius: 999px;
-  border: 1px solid var(--border-color);
-  background-color: var(--surface-color);
-  color: var(--text-primary);
-  cursor: pointer;
   font-size: 14px;
-  font-weight: 700;
-  transition: background-color var(--transition-speed) var(--transition-curve), color var(--transition-speed) var(--transition-curve), border-color var(--transition-speed) var(--transition-curve);
 }
 
 .theme-toggle__button i {
   font-size: 18px;
   width: 18px;
   height: 18px;
-}
-
-.theme-toggle__button:active,
-.theme-toggle__button:hover {
-  background-color: var(--accent-color-light);
-}
-
-html[data-theme="dark"] .theme-toggle__button:active,
-html[data-theme="dark"] .theme-toggle__button:hover {
-  background-color: var(--accent-color);
 }
 
 @media screen and (max-width: 1000px) {
@@ -535,7 +524,6 @@ html[data-theme="dark"] .theme-toggle__button:hover {
   .color-tool {
     display: block;
     padding: 165px 20px 60px;
-    font-family: var(--font-body);
   }
 
   .page-content {
