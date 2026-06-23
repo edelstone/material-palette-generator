@@ -243,6 +243,7 @@ button {
 
 .color-picker-panel__remove-button i {
   font-size: 16px;
+  margin-top: 2px;
 }
 
 .color-picker-panel__remove-button span {
@@ -439,6 +440,7 @@ html.no-palette-transition .color-palette__cell {
   background-color: var(--surface-color);
   white-space: pre-wrap;
   overflow: auto;
+  overscroll-behavior: none;
 }
 
 .modal-text {
@@ -477,6 +479,11 @@ html.no-palette-transition .color-palette__cell {
   font-size: 16px;
 }
 
+.exportButton i {
+  height: 16px;
+}
+
+
 .exportButton:hover,
 .exportButton:active,
 .theme-toggle__button:hover,
@@ -489,10 +496,6 @@ html[data-theme="dark"] .exportButton:active,
 html[data-theme="dark"] .theme-toggle__button:hover,
 html[data-theme="dark"] .theme-toggle__button:active {
   background-color: var(--accent-color);
-}
-
-.exportButton i {
-  font-size: 24px;
 }
 
 .theme-toggle {
@@ -512,8 +515,7 @@ html[data-theme="dark"] .theme-toggle__button:active {
 
 .theme-toggle__button i {
   font-size: 18px;
-  width: 18px;
-  height: 18px;
+  height: 14px;
 }
 
 @media screen and (max-width: 1000px) {
