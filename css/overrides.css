@@ -70,6 +70,18 @@ button {
   -webkit-font-smoothing: antialiased;
 }
 
+/*
+Material Symbols glyphs sit high in their own line box (large ascent, ~no
+descent), so at line-height:1 they render visibly above the optical center
+of any adjacent text. Nudging down by 0.15em (measured against glyph ink
+bounds) corrects this at any font-size, so individual icon instances don't
+each need their own hand-tuned height/margin fix.
+*/
+.material-icons,
+.material-symbols-rounded {
+  transform: translateY(0.15em);
+}
+
 .github-corner {
   fill: var(--surface-color-reverse);
   color: var(--text-reverse);
@@ -243,7 +255,6 @@ button {
 
 .color-picker-panel__remove-button i {
   font-size: 16px;
-  margin-top: 2px;
 }
 
 .color-picker-panel__remove-button span {
@@ -416,10 +427,8 @@ html.no-palette-transition .color-palette__cell {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-  display: flex;
-  align-items: center;
   position: relative;
-  right: -4px;
+  right: -10px;
   background: transparent;
 }
 
@@ -479,11 +488,6 @@ html.no-palette-transition .color-palette__cell {
   font-size: 16px;
 }
 
-.exportButton i {
-  height: 16px;
-}
-
-
 .exportButton:hover,
 .exportButton:active,
 .theme-toggle__button:hover,
@@ -508,14 +512,13 @@ html[data-theme="dark"] .theme-toggle__button:active {
 .theme-toggle__button {
   justify-content: center;
   gap: 8px;
-  padding: 10px 14px;
-  min-width: 140px;
+  padding: 10px;
+  width: 140px;
   font-size: 14px;
 }
 
 .theme-toggle__button i {
   font-size: 18px;
-  height: 14px;
 }
 
 @media screen and (max-width: 1000px) {
